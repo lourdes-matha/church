@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grace Community Church</title> <!-- Replace with your church name -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header / Hero Section -->
+<header id="hero">
+    <div class="hero-content">
+        <h1><span class="church-name">Lourde Mada</span></h1>
+        <p class="address">1400 Cabana Road W, Windsor, ON</p> <!-- Replace with your address -->
+        <p class="tagline">Welcome to your home away from home! Join us in faith and fellowship.</p>
+    </div>
+</header>
+
+<main>
+    <!-- Service Times Section -->
+    <section id="service-times">
+        <h2>Service & Meeting Times</h2>
+        <div class="times-grid">
+            <div class="time-item">
+                <h3>Mass</h3>
+                <p>Sunday mass - 3:00 PM</p>
+
+            </div>
+            <div class="time-item">
+                <h3>Confession</h3>
+                <p>Join Whatsapp group for consistent updates!</p>
+            </div>
+            <div class="time-item">
+                <h3>Sunday School</h3>
+                <p>4:00 PM - 5:00 PM</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Group Section -->
+    <section id="whatsapp">
+        <h2>Stay Connected</h2>
+        <p>Join our church WhatsApp group for announcements, prayer requests, and community updates.</p>
+        <a href="YOUR_WHATSAPP_GROUP_LINK_HERE" target="_blank" class="cta-button">Join WhatsApp Group</a>
+        <p class="small-text">(You'll need WhatsApp installed on your device)</p>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section id="events">
+        <h2>Upcoming Events</h2>
+        <div class="event-list">
+            <div class="event-item">
+                <h3>Community Bake Sale</h3>
+                <p><strong>Date:</strong> Saturday, October 26th, 2024</p>
+                <p><strong>Time:</strong> 9:00 AM - 1:00 PM</p>
+                <p><strong>Location:</strong> Church Hall</p>
+                <p>Support our youth ministry! Delicious baked goods and coffee.</p>
+            </div>
+            <div class="event-item">
+                <h3>Guest Speaker Series</h3>
+                <p><strong>Date:</strong> Wednesday, November 6th, 2024</p>
+                <p><strong>Time:</strong> 7:00 PM</p>
+                <p><strong>Location:</strong> Sanctuary</p>
+                <p>Join us for an inspiring talk by Dr. Jane Doe on "Faith in Modern Times".</p>
+            </div>
+            <div class="event-item">
+                <h3>Christmas Pageant Rehearsal</h3>
+                <p><strong>Date:</strong> Every Saturday in November</p>
+                <p><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
+                <p><strong>Location:</strong> Sunday School Rooms</p>
+                <p>All children welcome to participate!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Church Life Gallery</h2>
+        <div class="gallery-grid">
+            <!-- Replace with your actual image paths -->
+            <img src="images/event1.png" alt="Church Event 1">
+            <img src="images/event2.png" alt="Church Event 2">
+            <img src="images/event3.png" alt="Church Event 3">
+            <img src="images/event4.png" alt="Church Event 4">
+            <img src="images/event5.png" alt="Church Event 5">
+            <img src="images/event6.png" alt="Church Event 6">
+
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© <span id="currentYear"></span> <span class="church-name">Lourde Mada Church</span>. All Rights Reserved.</p>
+    <p>Contact us: (123) 456-7890 | info@gracecommunity.org</p> <!-- Replace with your contact info -->
+</footer>
+
+<script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+
+<script>
+    // --- CONFIGURATION ---
+    // Define your church name here. Change it once, and it updates everywhere.
+    const churchName = "Lourde's Matha Church Windsor";
+    const churchNameShort = "Lourde's Matha"; // For places like the h1
+
+    // --- SCRIPT LOGIC (No need to edit below this line) ---
+    document.addEventListener('DOMContentLoaded', function() {
+        // Update the page title
+        document.title = churchName;
+
+        // Find all elements that need the church name and update them
+        const nameElements = document.querySelectorAll('.church-name');
+        nameElements.forEach(element => {
+            // A small trick to use the short name in the H1 tag
+            if (element.parentElement.tagName === 'H1') {
+                element.textContent = churchNameShort;
+            } else {
+                element.textContent = churchName;
+            }
+        });
+    });
+
+    // This is your existing script for the year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
