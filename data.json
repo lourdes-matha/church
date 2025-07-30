@@ -1,0 +1,57 @@
+{
+  "nameShort": "Lourdes Matha",
+  "nameFull": "Lourdes Matha Syro-Malabar Catholic Church",
+  "address": "1400 Cabana Road W, Windsor, ON",
+  "tagline": "Welcome to your home away from home! Join us in faith and fellowship.",
+  "contact": {
+    "phone": "(123) 456-7890",
+    "email": "info@gracecommunity.org"
+  },
+  "socials": {
+    "instagram": "https://www.instagram.com/lourdes_matha_church_windsor/",
+    "whatsapp": "YOUR_WHATSAPP_GROUP_LINK_HERE",
+    "facebook": "YOUR_FACEBOOK_LINK_HERE"
+  },
+  "timings": {
+    "mass": "Sunday mass - 4:00 PM EST",
+    "confession": "Join Whatsapp group for consistent updates!",
+    "catechism": "3:00 PM - 4:00 PM EST"
+  },
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.126442436531!2d-83.0594266845466!3d42.27702797919251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883b2c1a9318143b%3A0x514639912c37466!2s1400%20Cabana%20Rd%20W%2C%20Windsor%2C%20ON%20N9G%201C4%2C%20Canada!5e0!3m2!1sen!2sus!4v1678886400000!5m2!1sen!2sus",
+  "downloads": {
+    "pdfs": [
+      {
+        "title": "New Member Registration",
+        "description": "Download and fill out this form to register as a new member of our parish family.",
+        "url": "downloads/member-registration.pdf"
+      },
+      {
+        "title": "Catechism Registration Form",
+        "description": "Register your child for the upcoming Catechism school year.",
+        "url": "downloads/catechism-registration.pdf"
+      },
+      {
+        "title": "Facility Rental Request",
+        "description": "Request to use the church hall or other facilities for your event.",
+        "url": "downloads/facility-rental.pdf"
+      }
+    ],
+    "googleForms": [
+      {
+        "title": "Online Member Registration",
+        "description": "Register online quickly and easily using our secure digital form.",
+        "url": "YOUR_GOOGLE_FORM_LINK_1"
+      },
+      {
+        "title": "Online Catechism Registration",
+        "description": "A convenient online form to register your child for Catechism classes.",
+        "url": "YOUR_GOOGLE_FORM_LINK_2"
+      },
+      {
+        "title": "Prayer Request Form",
+        "description": "Submit a prayer request online to be included in our community prayers.",
+        "url": "YOUR_GOOGLE_FORM_LINK_3"
+      }
+    ]
+  }
+}

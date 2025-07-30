@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grace Community Church</title> <!-- Replace with your church name -->
+    <title>Lourdes Matha Syro-Malabar Catholic Church - Welcome Home</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+
+<!-- Navbar will be loaded here by JavaScript -->
+<div id="navbar-placeholder"></div>
 
 <!-- Header / Hero Section -->
 <header id="hero">
     <div class="hero-content">
-        <h1><span class="church-name">Lourde Mada</span></h1>
-        <p class="address">1400 Cabana Road W, Windsor, ON</p> <!-- Replace with your address -->
+        <!-- The h1 now has an ID and will be populated by JavaScript -->
+        <h1 id="hero-title"></h1>
+        <p class="address">1400 Cabana Road W, Windsor, ON</p>
         <p class="tagline">Welcome to your home away from home! Join us in faith and fellowship.</p>
     </div>
 </header>
@@ -21,111 +26,67 @@
 <main>
     <!-- Service Times Section -->
     <section id="service-times">
-        <h2>Service & Meeting Times</h2>
+        <h2>Services</h2>
         <div class="times-grid">
             <div class="time-item">
                 <h3>Mass</h3>
-                <p>Sunday mass - 3:00 PM</p>
-
+                <!-- This P tag now has an ID and will be populated by JavaScript -->
+                <p id="time-mass"></p>
             </div>
             <div class="time-item">
                 <h3>Confession</h3>
-                <p>Join Whatsapp group for consistent updates!</p>
+                <!-- This P tag now has an ID and will be populated by JavaScript -->
+                <p id="time-confession"></p>
             </div>
             <div class="time-item">
-                <h3>Sunday School</h3>
-                <p>4:00 PM - 5:00 PM</p>
+                <h3>Catechism</h3>
+                <!-- This P tag now has an ID and will be populated by JavaScript -->
+                <p id="time-catechism"></p>
             </div>
         </div>
     </section>
 
-    <!-- WhatsApp Group Section -->
-    <section id="whatsapp">
+    <!-- NEW Stay Connected Section -->
+    <section id="connect">
         <h2>Stay Connected</h2>
-        <p>Join our church WhatsApp group for announcements, prayer requests, and community updates.</p>
-        <a href="YOUR_WHATSAPP_GROUP_LINK_HERE" target="_blank" class="cta-button">Join WhatsApp Group</a>
-        <p class="small-text">(You'll need WhatsApp installed on your device)</p>
-    </section>
-
-    <!-- Upcoming Events Section -->
-    <section id="events">
-        <h2>Upcoming Events</h2>
-        <div class="event-list">
-            <div class="event-item">
-                <h3>Community Bake Sale</h3>
-                <p><strong>Date:</strong> Saturday, October 26th, 2024</p>
-                <p><strong>Time:</strong> 9:00 AM - 1:00 PM</p>
-                <p><strong>Location:</strong> Church Hall</p>
-                <p>Support our youth ministry! Delicious baked goods and coffee.</p>
-            </div>
-            <div class="event-item">
-                <h3>Guest Speaker Series</h3>
-                <p><strong>Date:</strong> Wednesday, November 6th, 2024</p>
-                <p><strong>Time:</strong> 7:00 PM</p>
-                <p><strong>Location:</strong> Sanctuary</p>
-                <p>Join us for an inspiring talk by Dr. Jane Doe on "Faith in Modern Times".</p>
-            </div>
-            <div class="event-item">
-                <h3>Christmas Pageant Rehearsal</h3>
-                <p><strong>Date:</strong> Every Saturday in November</p>
-                <p><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
-                <p><strong>Location:</strong> Sunday School Rooms</p>
-                <p>All children welcome to participate!</p>
-            </div>
+        <p class="section-intro">Follow us on social media and join our community groups to stay up-to-date with the latest news, events, and announcements.</p>
+        <div class="connect-grid">
+            <a href="YOUR_WHATSAPP_GROUP_LINK_HERE" target="_blank" class="connect-button whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>Join on WhatsApp</span>
+            </a>
+            <a href="https://www.instagram.com/lourdes_matha_church_windsor/" target="_blank" class="connect-button instagram">
+                <i class="fa-brands fa-instagram"></i>
+                <span>Follow on Instagram</span>
+            </a>
+            <a href="YOUR_FACEBOOK_LINK_HERE" target="_blank" class="connect-button facebook">
+                <i class="fa-brands fa-facebook"></i>
+                <span>Like on Facebook</span>
+            </a>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery">
-        <h2>Church Life Gallery</h2>
-        <div class="gallery-grid">
-            <!-- Replace with your actual image paths -->
-            <img src="images/event1.png" alt="Church Event 1">
-            <img src="images/event2.png" alt="Church Event 2">
-            <img src="images/event3.png" alt="Church Event 3">
-            <img src="images/event4.png" alt="Church Event 4">
-            <img src="images/event5.png" alt="Church Event 5">
-            <img src="images/event6.png" alt="Church Event 6">
-
+    <!-- Visit Us / Directions Section -->
+    <section id="directions">
+        <h2>Visit Us</h2>
+        <p class="section-intro">We are located at <strong>1400 Cabana Road W, Windsor, ON</strong>, also known as Corpus Christi Church</p>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.126442436531!2d-83.0594266845466!3d42.27702797919251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883b2c1a9318143b%3A0x514639912c37466!2s1400%20Cabana%20Rd%20W%2C%20Windsor%2C%20ON%20N9G%201C4%2C%20Canada!5e0!3m2!1sen!2sus!4v1678886400000!5m2!1sen!2sus"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
     </section>
 </main>
 
-<footer>
-    <p>© <span id="currentYear"></span> <span class="church-name">Lourde Mada Church</span>. All Rights Reserved.</p>
-    <p>Contact us: (123) 456-7890 | info@gracecommunity.org</p> <!-- Replace with your contact info -->
-</footer>
+<!-- Footer will be loaded here by JavaScript -->
+<div id="footer-placeholder"></div>
 
-<script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-</script>
-
-<script>
-    // --- CONFIGURATION ---
-    // Define your church name here. Change it once, and it updates everywhere.
-    const churchName = "Lourde's Matha Church Windsor";
-    const churchNameShort = "Lourde's Matha"; // For places like the h1
-
-    // --- SCRIPT LOGIC (No need to edit below this line) ---
-    document.addEventListener('DOMContentLoaded', function() {
-        // Update the page title
-        document.title = churchName;
-
-        // Find all elements that need the church name and update them
-        const nameElements = document.querySelectorAll('.church-name');
-        nameElements.forEach(element => {
-            // A small trick to use the short name in the H1 tag
-            if (element.parentElement.tagName === 'H1') {
-                element.textContent = churchNameShort;
-            } else {
-                element.textContent = churchName;
-            }
-        });
-    });
-
-    // This is your existing script for the year
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-</script>
-
+<!-- Load our new JavaScript file -->
+<script src="main.js"></script>
 </body>
 </html>

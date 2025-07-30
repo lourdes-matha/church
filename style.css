@@ -1,216 +1,111 @@
+/* START OF FILE: style.css */
+
 /* Basic Reset & Global Styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Open Sans', sans-serif; line-height: 1.6; color: #333; background-color: #f9f9f9; }
+h1, h2, h3 { font-family: 'Merriweather', serif; margin-bottom: 0.75em; }
+h1 { font-size: 3em; color: #fff; }
+h2 { font-size: 2.2em; color: #2c3e50; text-align: center; margin-bottom: 1em; }
+h3 { font-size: 1.5em; color: #3498db; }
+p { margin-bottom: 1em; }
+.section-intro { text-align: center; max-width: 600px; margin: 0 auto 1em; color: #555; font-size: 1.1em; }
+section { padding: 40px 20px; max-width: 1000px; margin: 0 auto; }
 
-body {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
-}
+#navbar-placeholder { position: sticky; top: 0; z-index: 1000; }
+.navbar { background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 0 20px; display: flex; justify-content: space-between; align-items: center; height: 70px; }
+.nav-brand { font-family: 'Merriweather', serif; font-size: 1.5em; color: #2c3e50; text-decoration: none; font-weight: 700; display: flex; align-items: center; }
+.nav-logo { height: 45px; width: auto; margin-right: 12px; }
+.nav-links { list-style: none; display: none; flex-direction: column; width: 100%; position: absolute; top: 70px; left: 0; background-color: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.nav-links.nav-links-active { display: flex; }
+.nav-links li { width: 100%; text-align: center; border-top: 1px solid #f0f0f0; }
+.nav-links li a { display: block; padding: 20px 15px; text-decoration: none; color: #333; font-weight: 600; transition: color 0.3s, background-color 0.3s; }
+.nav-links li a:hover { color: #fff; background-color: #3498db; }
+.hamburger-menu { display: block; font-size: 1.8em; color: #2c3e50; background: none; border: none; cursor: pointer; }
+@media (min-width: 768px) { .hamburger-menu { display: none; } .nav-links { display: flex; flex-direction: row; position: static; width: auto; background-color: transparent; box-shadow: none; } .nav-links li { width: auto; border-top: none; } }
 
-h1, h2, h3 {
-    font-family: 'Merriweather', serif;
-    margin-bottom: 0.75em;
-}
+#hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero.png'); background-size: cover; background-position: center; color: #fff; text-align: center; padding: 100px 20px; display: flex; justify-content: center; align-items: center; }
+#hero .address { font-size: 1.2em; margin-bottom: 0.5em; }
+#hero .tagline { font-size: 1.4em; font-style: italic; }
 
-h1 {
-    font-size: 3em;
-    color: #fff; /* White text for hero */
-}
+.page-header { padding-top: 60px; padding-bottom: 60px; }
+#pastor-message .pastor-content { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; text-align: left; }
+.pastor-photo { border-radius: 50%; width: 200px; height: 200px; object-fit: cover; border: 5px solid #ecf0f1; margin: 0 auto 20px auto; }
+.pastor-text { flex: 1; min-width: 300px; }
+#service-times { background-color: #fff; }
+.times-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; text-align: center; }
+.time-item { background-color: #ecf0f1; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
 
-h2 {
-    font-size: 2.2em;
-    color: #2c3e50; /* Dark blue-gray */
+#connect { text-align: center; background-color: #f0f4f8; }
+.connect-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 800px; margin: 30px auto 0; }
+.connect-button { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 25px 15px; text-decoration: none; color: white; border-radius: 8px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.connect-button:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+.connect-button i { font-size: 2.5em; margin-bottom: 10px; }
+.connect-button span { font-weight: 600; }
+.connect-button.whatsapp { background-color: #25D366; }
+.connect-button.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.connect-button.facebook { background-color: #1877F2; }
+
+#directions { background-color: #fff; }
+.map-container { position: relative; padding-bottom: 50%; height: 0; overflow: hidden; max-width: 100%; background: #f0f4f8; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/* --- NEW: Downloads Page Styles --- */
+.downloads-subtitle {
     text-align: center;
-    margin-bottom: 1em;
-    padding-top: 1em; /* Space above section titles */
-}
-
-h3 {
-    font-size: 1.5em;
-    color: #3498db; /* Nice blue */
-}
-
-p {
-    margin-bottom: 1em;
-}
-
-section {
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: 0 auto; /* Center sections */
-}
-
-/* Hero Section */
-#hero {
-    /* === CHANGE THIS LINE === */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero.png'); /* <-- Put your image path here! */
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    text-align: center;
-    padding: 100px 20px;
-    min-height: 60vh; /* Make hero take up significant viewport height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-content {
-    /* This div already existed, now it also contains the logo */
-}
-
-#hero .address {
-    font-size: 1.2em;
-    margin-bottom: 0.5em;
-}
-
-#hero .tagline {
-    font-size: 1.4em;
-    font-style: italic;
-}
-
-/* Service Times Section */
-#service-times {
-    background-color: #fff;
-}
-.times-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    text-align: center;
-}
-
-.time-item {
-    background-color: #ecf0f1; /* Light gray background for items */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.time-item p {
-    margin-bottom: 0.5em;
-}
-
-/* WhatsApp Section */
-#whatsapp {
-    text-align: center;
-    background-color: #e8f5e9; /* Light green background */
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: #25D366; /* WhatsApp Green */
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 25px; /* Pill shape */
-    font-weight: bold;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-}
-
-.cta-button:hover {
-    background-color: #1DAE54; /* Darker WhatsApp Green */
-}
-
-.small-text {
-    font-size: 0.9em;
-    color: #555;
-    margin-top: 10px;
-}
-
-/* Upcoming Events Section */
-#events {
-    background-color: #fff;
-}
-.event-list .event-item {
-    background-color: #fdf5e6; /* Light peach/beige */
-    padding: 20px;
+    margin-top: 40px;
     margin-bottom: 20px;
-    border-left: 5px solid #e67e22; /* Orange accent border */
-    border-radius: 0 8px 8px 0;
+    color: #2c3e50;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
 }
-
-.event-item h3 {
-    color: #c0392b; /* Dark red */
-}
-
-.event-item p {
-    margin-bottom: 0.3em;
-}
-
-/* Gallery Section */
-#gallery {
-    background-color: #f0f4f8; /* Light blue-gray background */
-}
-.gallery-grid {
+.downloads-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
 }
-
-.gallery-grid img {
-    width: 100%;
-    height: auto;
+.download-tile {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.05);
-}
-
-/* Footer */
-footer {
-    background-color: #2c3e50; /* Dark blue-gray */
-    color: #ecf0f1; /* Light gray text */
+    padding: 25px;
     text-align: center;
-    padding: 20px;
-    font-size: 0.9em;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.download-tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+.download-tile i {
+    font-size: 2.5em;
+    color: #c0392b; /* A nice red for PDFs */
+    margin-bottom: 15px;
+}
+.download-tile i.fa-wpforms {
+    color: #3498db; /* A blue for forms */
+}
+.download-tile h3 {
+    font-size: 1.3em;
+    color: #2c3e50;
+}
+.download-tile p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 0;
 }
 
-footer p {
-    margin-bottom: 0.5em;
-}
+footer { background-color: #2c3e50; color: #ecf0f1; text-align: center; padding: 40px 20px; }
+footer p { margin-bottom: 0.5em; font-size: 0.9em; }
+.social-icons { margin-bottom: 20px; }
+.social-icons a { color: #fff; font-size: 1.8em; margin: 0 15px; text-decoration: none; transition: color 0.3s ease; }
+.social-icons a:hover { color: #3498db; }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.5em;
-    }
-    h2 {
-        font-size: 1.8em;
-    }
-    #hero {
-        padding: 80px 20px;
-        min-height: 50vh;
-    }
-    .times-grid {
-        grid-template-columns: 1fr; /* Stack items on smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 2em;
-    }
-    #hero .tagline {
-        font-size: 1.2em;
-    }
-    .cta-button {
-        font-size: 1em;
-        padding: 10px 20px;
-    }
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 10px;
-    }
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 1.8em; }
+    #hero { padding: 80px 20px; }
+    .times-grid, .connect-grid, .downloads-grid { grid-template-columns: 1fr; }
 }
