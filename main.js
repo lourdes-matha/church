@@ -22,10 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById('time-catechism').textContent = SITE_DATA.timings.catechism;
             }
 
-            // --- NEW: Populate Downloads Page ---
+            // Populate Downloads Page
             const pdfGrid = document.getElementById('pdf-downloads-grid');
-            if (pdfGrid) { // This check ensures the code only runs on downloads.html
-                // Populate PDF tiles
+            if (pdfGrid) {
                 SITE_DATA.downloads.pdfs.forEach(pdf => {
                     const tileHTML = `
                         <a href="${pdf.url}" class="download-tile" download>
@@ -35,8 +34,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         </a>`;
                     pdfGrid.innerHTML += tileHTML;
                 });
-
-                // Populate Google Form tiles
                 const gformGrid = document.getElementById('gform-downloads-grid');
                 SITE_DATA.downloads.googleForms.forEach(form => {
                     const tileHTML = `
@@ -48,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     gformGrid.innerHTML += tileHTML;
                 });
             }
-            // --- END OF NEW CODE ---
 
             // Function to load components (navbar, footer)
             const loadComponent = (selector, url, callback) => {
@@ -65,6 +61,16 @@ document.addEventListener("DOMContentLoaded", function() {
             loadComponent("#navbar-placeholder", "navbar.html", (data) => {
                 document.querySelector('.nav-brand span').textContent = data.nameShort;
 
+                // --- NEW: Populate dynamic nav links from data.json ---
+                const dynamicLinks = document.querySelectorAll('a[data-link]');
+                dynamicLinks.forEach(link => {
+                    const key = link.dataset.link; // e.g., "facebook" or "instagram"
+                    if (data.socials && data.socials[key]) {
+                        link.href = data.socials[key];
+                    }
+                });
+                // --- END OF NEW CODE ---
+
                 const hamburger = document.querySelector('.hamburger-menu');
                 const navLinks = document.querySelector('.nav-links');
                 const icon = hamburger.querySelector('i');
@@ -79,6 +85,16 @@ document.addEventListener("DOMContentLoaded", function() {
             loadComponent("#footer-placeholder", "footer.html", (data) => {
                 document.querySelector('.copyright-church-name').textContent = data.nameFull;
                 document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+                // Populate connect buttons and footer icons from data.json
+                const connectInstagram = document.querySelector('.connect-button.instagram');
+                const connectWhatsapp = document.querySelector('.connect-button.whatsapp');
+                const connectFacebook = document.querySelector('.connect-button.facebook');
+
+                if (connectInstagram) connectInstagram.href = data.socials.instagram;
+                if (connectWhatsapp) connectWhatsapp.href = data.socials.whatsapp;
+                if (connectFacebook) connectFacebook.href = data.socials.facebook;
+
                 document.querySelector('.social-icons a[aria-label="Instagram"]').href = data.socials.instagram;
                 document.querySelector('.social-icons a[aria-label="WhatsApp"]').href = data.socials.whatsapp;
                 document.querySelector('.social-icons a[aria-label="Facebook"]').href = data.socials.facebook;
