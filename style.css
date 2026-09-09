@@ -27,6 +27,7 @@ h1 { font-size: 3em; color: var(--color-white); }
 h2 { font-size: 2.2em; color: var(--color-primary-accent); text-align: center; margin-bottom: 1em; }
 h3 { font-size: 1.5em; color: var(--color-secondary-accent); }
 p { margin-bottom: 1em; }
+a:focus-visible, button:focus-visible { outline: 3px solid #1f5f99; outline-offset: 3px; }
 .section-intro { text-align: center; max-width: 600px; margin: 0 auto 1em; color: #555; font-size: 1.1em; }
 section { padding: 40px 20px; max-width: 1000px; margin: 0 auto; }
 
@@ -78,6 +79,9 @@ section { padding: 40px 20px; max-width: 1000px; margin: 0 auto; }
 .download-tile p { font-size: 0.95em; line-height: 1.5; color: #555; margin-bottom: 0; }
 
 footer { background-color: var(--color-dark-base); color: #ecf0f1; text-align: center; padding: 40px 20px; }
+.error-page { min-height: 70vh; display: grid; place-content: center; justify-items: center; text-align: center; }
+.error-page h1 { color: var(--color-primary-accent); }
+.error-home-link { color: var(--color-primary-accent); font-weight: 700; }
 footer p { margin-bottom: 0.5em; font-size: 0.9em; }
 .social-icons { margin-bottom: 20px; }
 .social-icons a { color: var(--color-white); font-size: 1.8em; margin: 0 15px; text-decoration: none; transition: color 0.3s ease; }
@@ -88,6 +92,8 @@ footer p { margin-bottom: 0.5em; font-size: 0.9em; }
     h2 { font-size: 1.8em; }
     #hero { padding: 80px 20px; }
     .times-grid, .connect-grid, .downloads-grid { grid-template-columns: 1fr; }
+    .pastor-text { min-width: 0; width: 100%; }
+    .nav-brand { font-size: 1.1rem; }
 }
 
 /* END OF FILE: style.css */
