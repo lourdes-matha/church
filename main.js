@@ -63,6 +63,10 @@ document.addEventListener("DOMContentLoaded", function() {
             loadComponent("#navbar-placeholder", "navbar.html", (data) => {
                 document.querySelector('.nav-brand span').textContent = data.nameShort;
 
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const currentLink = document.querySelector(`[data-page="${currentPage}"]`);
+                if (currentLink) currentLink.setAttribute('aria-current', 'page');
+
                 // --- NEW: Populate dynamic nav links from data.json ---
                 const dynamicLinks = document.querySelectorAll('a[data-link]');
                 dynamicLinks.forEach(link => {
@@ -82,6 +86,16 @@ document.addEventListener("DOMContentLoaded", function() {
                     hamburger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
                     icon.classList.toggle('fa-bars');
                     icon.classList.toggle('fa-xmark');
+                });
+
+                navLinks.addEventListener('click', (event) => {
+                    if (event.target.closest('a') && navLinks.classList.contains('nav-links-active')) {
+                        navLinks.classList.remove('nav-links-active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                        hamburger.setAttribute('aria-label', 'Open navigation menu');
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-xmark');
+                    }
                 });
             });
 
