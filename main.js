@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
             // Populate Service Times (if on homepage)
             const timeMass = document.getElementById('time-mass');
             if (timeMass) {
-                timeMass.textContent = SITE_DATA.timings.mass;
                 document.getElementById('time-confession').textContent = SITE_DATA.timings.confession;
                 document.getElementById('time-catechism').textContent = SITE_DATA.timings.catechism;
             }
