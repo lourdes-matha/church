@@ -19,38 +19,12 @@
   },
   "mapUrl": "https://maps.app.goo.gl/sRZ9G91q4yAVixCi9",
   "downloads": {
-    "pdfs": [
-      {
-        "title": "New Member Registration",
-        "description": "Download and fill out this form to register as a new member of our parish family.",
-        "url": "downloads/member-registration.pdf"
-      },
-      {
-        "title": "Catechism Registration Form",
-        "description": "Register your child for the upcoming Catechism school year.",
-        "url": "downloads/catechism-registration.pdf"
-      },
-      {
-        "title": "Donation Pre Authorization Form",
-        "description": "Give our church permission to automatically withdraw donations on a recurring schedule.",
-        "url": "downloads/facility-rental.pdf"
-      }
-    ],
+    "pdfs": [],
     "googleForms": [
       {
-        "title": "Online Member Registration",
-        "description": "Register online quickly and easily using our secure digital form.",
-        "url": "YOUR_GOOGLE_FORM_LINK_1"
-      },
-      {
-        "title": "Online Catechism Registration",
-        "description": "A convenient online form to register your child for Catechism classes.",
-        "url": "YOUR_GOOGLE_FORM_LINK_2"
-      },
-      {
-        "title": "Other Requests Form",
-        "description": "For any other requests.",
-        "url": "YOUR_GOOGLE_FORM_LINK_3"
+        "title": "Catechism Registration 2026–2027",
+        "description": "Register a student for the 2026–2027 Lourdes Matha Parish Catechism year.",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLScdAOH-bPYCB6TjAPF4Z-tMbE95QwtqEG1B-eIrd9dTxqBBWA/viewform"
       }
     ]
   }
