@@ -19,7 +19,18 @@
   },
   "mapUrl": "https://maps.app.goo.gl/sRZ9G91q4yAVixCi9",
   "downloads": {
-    "pdfs": [],
+    "pdfs": [
+      {
+        "title": "New Member Registration Form",
+        "description": "Download and fill out this form, then give the completed form to the Parish Priest.",
+        "url": "downloads/new-member-registration-form.pdf"
+      },
+      {
+        "title": "Donation Pre-Authorization Form",
+        "description": "Download and fill out this PAD form, then give the completed form to a Trustee/Kaikkaaran.",
+        "url": "downloads/donation-pad-form.pdf"
+      }
+    ],
     "googleForms": [
       {
         "title": "Catechism Registration 2026–2027",
