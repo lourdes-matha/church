@@ -27,12 +27,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 const pdfSection = document.getElementById('pdf-downloads-section');
                 if (SITE_DATA.downloads.pdfs.length > 0) pdfSection.hidden = false;
                 SITE_DATA.downloads.pdfs.forEach(pdf => {
+                    const emailInstruction = pdf.submissionEmail ? `
+                            <p class="form-email-note">You can also email the completed form to <a href="mailto:${pdf.submissionEmail}"><strong>${pdf.submissionEmail}</strong></a>.</p>` : '';
                     const tileHTML = `
-                        <a href="${pdf.url}" class="download-tile" download>
+                        <article class="download-tile">
                             <i class="fas fa-file-pdf"></i>
                             <h3>${pdf.title}</h3>
                             <p>${pdf.description}</p>
-                        </a>`;
+                            <a href="${pdf.url}" class="button button-primary download-form-link" download>Download form</a>
+                            ${emailInstruction}
+                        </article>`;
                     pdfGrid.innerHTML += tileHTML;
                 });
                 const gformGrid = document.getElementById('gform-downloads-grid');
