@@ -4,18 +4,18 @@
         <img src="images/logo.png" alt="Lourdes Matha Church Logo" class="nav-logo">
         <span></span> <!-- Name is injected here -->
     </a>
-    <button class="hamburger-menu" aria-label="Toggle navigation menu">
+    <button class="hamburger-menu" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
         <i class="fas fa-bars"></i>
     </button>
-    <ul class="nav-links">
+    <ul class="nav-links" id="primary-navigation">
         <li><a href="index.html">Home</a></li>
         <li><a href="pastor.html">Pastor's Message</a></li>
         <li><a href="downloads.html">Downloads</a></li>
 
         <!-- UPDATED LINKS BELOW -->
         <!-- These links now have a 'data-link' attribute that main.js will use -->
-        <li><a href="#" data-link="facebook">News and Updates</a></li>
-        <li><a href="#" data-link="instagram">Gallery</a></li>
+        <li><a href="#" data-link="facebook" target="_blank" rel="noopener noreferrer">News and Updates</a></li>
+        <li><a href="#" data-link="instagram" target="_blank" rel="noopener noreferrer">Gallery</a></li>
     </ul>
 </nav>
 <!-- END OF FILE: navbar.html -->
