@@ -23,12 +23,14 @@
       {
         "title": "New Member Registration Form",
         "description": "Download and fill out this form, then give the completed form to the Parish Priest.",
-        "url": "downloads/new-member-registration-form.pdf"
+        "url": "downloads/new-member-registration-form.pdf",
+        "submissionEmail": "lourdesmatha.trustee@gmail.com"
       },
       {
         "title": "Donation Pre-Authorization Form",
         "description": "Download and fill out this PAD form, then give the completed form to a Trustee/Kaikkaaran.",
-        "url": "downloads/donation-pad-form.pdf"
+        "url": "downloads/donation-pad-form.pdf",
+        "submissionEmail": "lourdesmatha.trustee@gmail.com"
       }
     ],
     "googleForms": [
