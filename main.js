@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function() {
             // Populate Downloads Page
             const pdfGrid = document.getElementById('pdf-downloads-grid');
             if (pdfGrid) {
+                const pdfSection = document.getElementById('pdf-downloads-section');
+                if (SITE_DATA.downloads.pdfs.length > 0) pdfSection.hidden = false;
                 SITE_DATA.downloads.pdfs.forEach(pdf => {
                     const tileHTML = `
                         <a href="${pdf.url}" class="download-tile" download>
@@ -75,7 +77,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 const navLinks = document.querySelector('.nav-links');
                 const icon = hamburger.querySelector('i');
                 hamburger.addEventListener('click', () => {
-                    navLinks.classList.toggle('nav-links-active');
+                    const isOpen = navLinks.classList.toggle('nav-links-active');
+                    hamburger.setAttribute('aria-expanded', String(isOpen));
+                    hamburger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
                     icon.classList.toggle('fa-bars');
                     icon.classList.toggle('fa-xmark');
                 });
@@ -95,9 +99,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (connectWhatsapp) connectWhatsapp.href = data.socials.whatsapp;
                 if (connectFacebook) connectFacebook.href = data.socials.facebook;
 
-                document.querySelector('.social-icons a[aria-label="Instagram"]').href = data.socials.instagram;
-                document.querySelector('.social-icons a[aria-label="WhatsApp"]').href = data.socials.whatsapp;
-                document.querySelector('.social-icons a[aria-label="Facebook"]').href = data.socials.facebook;
+                document.querySelector('.social-icons a[aria-label*="Instagram"]').href = data.socials.instagram;
+                document.querySelector('.social-icons a[aria-label*="WhatsApp"]').href = data.socials.whatsapp;
+                document.querySelector('.social-icons a[aria-label*="Facebook"]').href = data.socials.facebook;
             });
 
         })
