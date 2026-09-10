@@ -110,8 +110,11 @@ section { padding: 6rem max(1.5rem, calc((100% - 1180px) / 2)); }
 .visit-content { padding: 1rem 0; align-self: center; }
 .visit-content h2 { margin-bottom: 1rem; color: #fff; }
 .visit-content > p:not(.eyebrow) { color: #d4e0ea; }
-.visit-content address { margin: 1.7rem 0; display: flex; gap: .9rem; align-items: flex-start; font-style: normal; }
+.visit-location-row { margin: 1.7rem 0 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem 1.25rem; align-items: center; }
+.visit-content address { margin: 0; display: flex; gap: .9rem; align-items: flex-start; font-style: normal; }
 .visit-content address i { color: var(--gold-300); margin-top: .35rem; }
+.location-map-button { min-height: 42px; padding: .55rem .9rem; font-size: .82rem; }
+.visit-contact-title { margin: 0 0 .65rem; color: #fff; font-size: 1.05rem; }
 .visit-email { width: fit-content; max-width: 100%; padding: .7rem .9rem; display: flex; gap: .75rem; align-items: center; border: 1px solid rgba(228,200,128,.55); border-radius: 10px; background: rgba(255,255,255,.1); color: #fff; overflow-wrap: anywhere; }
 .visit-email i { color: var(--gold-300); font-size: 1.1rem; }
 .visit-email a { color: var(--gold-300); text-decoration: none; font-weight: 800; }
@@ -141,6 +144,8 @@ section { padding: 6rem max(1.5rem, calc((100% - 1180px) / 2)); }
 
 .page-header { padding-top: 5rem; padding-bottom: 5rem; }
 #pastor-message, #downloads-page, #events-page { background: var(--mist); }
+#events-page { padding-top: 3.25rem; }
+.events-page-header { margin-bottom: 2.5rem; }
 #pastor-message .pastor-content { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; max-width: 1000px; margin: auto; }
 .pastor-photo { width: 220px; height: 220px; object-fit: cover; border-radius: 50%; border: 6px solid #fff; box-shadow: var(--shadow); margin: auto; }
 .pastor-text { flex: 1; min-width: 300px; }
@@ -225,6 +230,7 @@ footer { background: #071f37; color: #dfe9f1; }
     .hero-content { width: min(100% - 2rem, 1180px); padding: 4.5rem 0; }
     .hero-actions .button { width: 100%; }
     section { padding: 4.5rem 1rem; }
+    #events-page { padding-top: 2.5rem; }
     .time-item { padding: 1.5rem; }
     .sunday-mass strong { font-size: 2.25rem; }
     .weekday-masses { display: grid; }
