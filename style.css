@@ -47,7 +47,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #f4c85e; outline-offs
 .hamburger-menu { display: none; border: 0; background: transparent; color: var(--marian-900); font-size: 1.6rem; cursor: pointer; }
 
 #hero { position: relative; min-height: min(740px, calc(100vh - 120px)); display: grid; align-items: center; background: url("images/hero.png") 62% 46% / cover no-repeat; color: #fff; overflow: hidden; }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,27,49,.94) 0%, rgba(8,38,67,.78) 45%, rgba(8,38,67,.22) 77%, rgba(8,38,67,.08) 100%); }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,27,49,.82) 0%, rgba(8,38,67,.62) 45%, rgba(8,38,67,.16) 77%, rgba(8,38,67,.04) 100%); }
 .hero-content { position: relative; z-index: 1; width: min(1180px, calc(100% - 3rem)); margin: auto; padding: 6rem 0 7rem; }
 .hero-content h1 { max-width: 830px; margin: .5rem 0 1.4rem; text-wrap: balance; }
 .hero-intro { max-width: 670px; font-size: clamp(1.05rem, 2vw, 1.3rem); color: #e5edf5; }
@@ -226,7 +226,7 @@ footer { background: #071f37; color: #dfe9f1; }
     .nav-brand { font-size: 1rem; }
     .nav-logo { width: 46px; height: 46px; }
     #hero { min-height: 650px; background-position: 58% 50%; }
-    .hero-overlay { background: linear-gradient(90deg, rgba(5,27,49,.93), rgba(5,27,49,.65)); }
+    .hero-overlay { background: linear-gradient(90deg, rgba(5,27,49,.86), rgba(5,27,49,.58)); }
     .hero-content { width: min(100% - 2rem, 1180px); padding: 4.5rem 0; }
     .hero-actions .button { width: 100%; }
     section { padding: 4.5rem 1rem; }
