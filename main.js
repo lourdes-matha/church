@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
             // Populate Service Times (if on homepage)
             const timeMass = document.getElementById('time-mass');
             if (timeMass) {
-                timeMass.textContent = SITE_DATA.timings.mass;
                 document.getElementById('time-confession').textContent = SITE_DATA.timings.confession;
                 document.getElementById('time-catechism').textContent = SITE_DATA.timings.catechism;
             }
@@ -25,13 +24,19 @@ document.addEventListener("DOMContentLoaded", function() {
             // Populate Downloads Page
             const pdfGrid = document.getElementById('pdf-downloads-grid');
             if (pdfGrid) {
+                const pdfSection = document.getElementById('pdf-downloads-section');
+                if (SITE_DATA.downloads.pdfs.length > 0) pdfSection.hidden = false;
                 SITE_DATA.downloads.pdfs.forEach(pdf => {
+                    const emailInstruction = pdf.submissionEmail ? `
+                            <p class="form-email-note">You can also email the completed form to <a href="mailto:${pdf.submissionEmail}"><strong>${pdf.submissionEmail}</strong></a>.</p>` : '';
                     const tileHTML = `
-                        <a href="${pdf.url}" class="download-tile" download>
+                        <article class="download-tile">
                             <i class="fas fa-file-pdf"></i>
                             <h3>${pdf.title}</h3>
                             <p>${pdf.description}</p>
-                        </a>`;
+                            <a href="${pdf.url}" class="button button-primary download-form-link" download>Download form</a>
+                            ${emailInstruction}
+                        </article>`;
                     pdfGrid.innerHTML += tileHTML;
                 });
                 const gformGrid = document.getElementById('gform-downloads-grid');
@@ -61,6 +66,10 @@ document.addEventListener("DOMContentLoaded", function() {
             loadComponent("#navbar-placeholder", "navbar.html", (data) => {
                 document.querySelector('.nav-brand span').textContent = data.nameShort;
 
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const currentLink = document.querySelector(`[data-page="${currentPage}"]`);
+                if (currentLink) currentLink.setAttribute('aria-current', 'page');
+
                 // --- NEW: Populate dynamic nav links from data.json ---
                 const dynamicLinks = document.querySelectorAll('a[data-link]');
                 dynamicLinks.forEach(link => {
@@ -75,9 +84,21 @@ document.addEventListener("DOMContentLoaded", function() {
                 const navLinks = document.querySelector('.nav-links');
                 const icon = hamburger.querySelector('i');
                 hamburger.addEventListener('click', () => {
-                    navLinks.classList.toggle('nav-links-active');
+                    const isOpen = navLinks.classList.toggle('nav-links-active');
+                    hamburger.setAttribute('aria-expanded', String(isOpen));
+                    hamburger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
                     icon.classList.toggle('fa-bars');
                     icon.classList.toggle('fa-xmark');
+                });
+
+                navLinks.addEventListener('click', (event) => {
+                    if (event.target.closest('a') && navLinks.classList.contains('nav-links-active')) {
+                        navLinks.classList.remove('nav-links-active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                        hamburger.setAttribute('aria-label', 'Open navigation menu');
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-xmark');
+                    }
                 });
             });
 
@@ -95,9 +116,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (connectWhatsapp) connectWhatsapp.href = data.socials.whatsapp;
                 if (connectFacebook) connectFacebook.href = data.socials.facebook;
 
-                document.querySelector('.social-icons a[aria-label="Instagram"]').href = data.socials.instagram;
-                document.querySelector('.social-icons a[aria-label="WhatsApp"]').href = data.socials.whatsapp;
-                document.querySelector('.social-icons a[aria-label="Facebook"]').href = data.socials.facebook;
+                document.querySelector('.social-icons a[aria-label*="Instagram"]').href = data.socials.instagram;
+                document.querySelector('.social-icons a[aria-label*="WhatsApp"]').href = data.socials.whatsapp;
+                document.querySelector('.social-icons a[aria-label*="Facebook"]').href = data.socials.facebook;
             });
 
         })
