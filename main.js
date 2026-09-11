@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", function() {
             const timeMass = document.getElementById('time-mass');
             if (timeMass) {
                 document.getElementById('time-confession').textContent = SITE_DATA.timings.confession;
-                document.getElementById('time-catechism').textContent = SITE_DATA.timings.catechism;
+                const timeCatechism = document.getElementById('time-catechism');
+                if (timeCatechism) timeCatechism.textContent = SITE_DATA.timings.catechism;
             }
 
             // Populate Downloads Page
@@ -83,6 +84,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 const hamburger = document.querySelector('.hamburger-menu');
                 const navLinks = document.querySelector('.nav-links');
                 const icon = hamburger.querySelector('i');
+                const dropdownToggle = document.querySelector('.nav-dropdown-toggle');
+                if (dropdownToggle) {
+                    dropdownToggle.addEventListener('click', () => {
+                        const dropdown = dropdownToggle.closest('.nav-dropdown');
+                        const isOpen = dropdown.classList.toggle('nav-dropdown-open');
+                        dropdownToggle.setAttribute('aria-expanded', String(isOpen));
+                    });
+                }
                 hamburger.addEventListener('click', () => {
                     const isOpen = navLinks.classList.toggle('nav-links-active');
                     hamburger.setAttribute('aria-expanded', String(isOpen));

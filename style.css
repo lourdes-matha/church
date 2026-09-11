@@ -42,6 +42,14 @@ a:focus-visible, button:focus-visible { outline: 3px solid #f4c85e; outline-offs
 .nav-links { list-style: none; display: flex; align-items: center; gap: .25rem; }
 .nav-links a { display: block; padding: .75rem .7rem; color: #34465a; text-decoration: none; font-size: .9rem; font-weight: 700; border-radius: 8px; }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--marian-700); background: var(--marian-100); }
+.nav-dropdown { position: relative; }
+.nav-dropdown-toggle { display: flex; align-items: center; gap: .35rem; padding: .75rem .7rem; border: 0; border-radius: 8px; background: transparent; color: #34465a; font: inherit; font-size: .9rem; font-weight: 700; cursor: pointer; }
+.nav-dropdown-toggle:hover, .nav-dropdown-open .nav-dropdown-toggle { color: var(--marian-700); background: var(--marian-100); }
+.nav-dropdown-toggle i { font-size: .7rem; transition: transform .2s ease; }
+.nav-dropdown-open .nav-dropdown-toggle i { transform: rotate(180deg); }
+.nav-dropdown-menu { display: none; position: absolute; top: calc(100% + .35rem); left: 0; min-width: 180px; padding: .45rem; list-style: none; border: 1px solid var(--line); border-radius: 10px; background: #fff; box-shadow: 0 12px 28px rgba(11,45,79,.14); }
+.nav-dropdown-open .nav-dropdown-menu { display: block; }
+.nav-dropdown-menu a { white-space: nowrap; }
 .nav-links .nav-visit { margin-left: .35rem; padding-inline: 1rem; color: #fff; background: var(--marian-700); }
 .nav-links .nav-visit:hover { color: #fff; background: var(--marian-900); }
 .hamburger-menu { display: none; border: 0; background: transparent; color: var(--marian-900); font-size: 1.6rem; cursor: pointer; }
@@ -205,6 +213,8 @@ footer { background: #071f37; color: #dfe9f1; }
     .nav-links { display: none; position: absolute; top: 78px; left: 0; right: 0; padding: .75rem 1rem 1rem; flex-direction: column; align-items: stretch; background: #fff; border-top: 1px solid var(--line); box-shadow: 0 14px 25px rgba(11,45,79,.12); }
     .nav-links.nav-links-active { display: flex; }
     .nav-links a { padding: .85rem 1rem; }
+    .nav-dropdown-toggle { width: 100%; justify-content: space-between; padding: .85rem 1rem; }
+    .nav-dropdown-menu { position: static; margin: .2rem 0 0 1rem; box-shadow: none; }
     .nav-links .nav-visit { margin-left: 0; text-align: center; }
     .times-grid, .quick-links-grid { grid-template-columns: 1fr; }
     .time-item { min-height: auto; }
