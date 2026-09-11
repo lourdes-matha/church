@@ -168,6 +168,7 @@ section { padding: 6rem max(1.5rem, calc((100% - 1180px) / 2)); }
 .download-tile .form-email-note { margin: 1rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line); font-size: .9rem; }
 .download-tile .form-email-note a { color: var(--marian-700); overflow-wrap: anywhere; text-underline-offset: 3px; }
 .event-card { max-width: 1050px; margin: auto; display: grid; grid-template-columns: minmax(280px, .8fr) 1fr; overflow: hidden; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+.event-card + .event-card { margin-top: 2rem; }
 .events-section-heading { max-width: 1050px; margin: 0 auto 1.5rem; }
 .events-section-heading h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); }
 .event-poster { width: 100%; height: 100%; max-height: 720px; object-fit: cover; object-position: top; }
