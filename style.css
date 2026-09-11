@@ -168,18 +168,21 @@ section { padding: 6rem max(1.5rem, calc((100% - 1180px) / 2)); }
 .download-tile .form-email-note { margin: 1rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line); font-size: .9rem; }
 .download-tile .form-email-note a { color: var(--marian-700); overflow-wrap: anywhere; text-underline-offset: 3px; }
 .upcoming-events-grid { max-width: 1050px; margin: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
-.event-card { min-width: 0; display: grid; grid-template-columns: 160px 1fr; overflow: hidden; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+.event-card { min-width: 0; min-height: 220px; display: grid; grid-template-columns: 135px 1fr; overflow: hidden; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 8px 22px rgba(11,45,79,.08); }
 .events-section-heading { max-width: 1050px; margin: 0 auto 1.5rem; }
 .events-section-heading h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); }
 .event-card > a:first-child { min-height: 100%; background: var(--marian-900); }
 .event-poster { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-.event-details { padding: 1.5rem; align-self: center; }
-.event-details h2 { margin-bottom: 1rem; }
-.event-meta { margin: 1rem 0; display: grid; gap: .55rem; }
+.event-details { padding: 1.15rem; align-self: center; }
+.event-details h2 { margin-bottom: .65rem; font-size: clamp(1.45rem, 2.4vw, 1.85rem); }
+.event-summary, .event-note { display: none; }
+.event-meta { margin: .7rem 0 .9rem; display: grid; gap: .4rem; font-size: .86rem; }
+.event-meta p:not(:first-child) { display: none; }
 .event-meta p { margin: 0; display: flex; gap: .75rem; align-items: flex-start; }
 .event-meta i { width: 1.25rem; margin-top: .3rem; color: var(--gold-500); text-align: center; }
 .event-note { color: var(--muted); }
 .event-actions { display: grid; justify-items: start; gap: .75rem; }
+.event-details .button { min-height: 40px; padding: .55rem .8rem; font-size: .8rem; }
 .earlier-events { padding: 5rem 0 0; }
 .instagram-events-card { max-width: 1050px; margin: auto; padding: 1.75rem 2rem; display: grid; grid-template-columns: 58px 1fr auto; align-items: center; gap: 1.25rem; border: 1px solid var(--line); border-radius: 14px; background: #fff; color: var(--marian-900); text-decoration: none; box-shadow: 0 8px 22px rgba(11,45,79,.06); }
 .instagram-events-card:hover { border-color: var(--gold-500); transform: translateY(-2px); }
@@ -225,7 +228,7 @@ footer { background: #071f37; color: #dfe9f1; }
     .welcome-section, .visit-section { grid-template-columns: 1fr; }
     .giving-grid { grid-template-columns: 1fr; }
     .upcoming-events-grid { grid-template-columns: 1fr; }
-    .event-card { grid-template-columns: 130px 1fr; }
+    .event-card { min-height: 190px; grid-template-columns: 110px 1fr; }
     .welcome-mark { min-height: 280px; }
     .map-container { min-height: 360px; }
     .connect-section { flex-direction: column; align-items: flex-start; }
@@ -245,14 +248,14 @@ footer { background: #071f37; color: #dfe9f1; }
     section { padding: 4.5rem 1rem; }
     #events-page { padding-top: 2.5rem; }
     .events-page-header { margin-bottom: 1.5rem; }
-    .event-card { grid-template-columns: 105px 1fr; border-radius: 12px; }
-    .event-details { padding: 1rem; }
+    .upcoming-events-grid { gap: .85rem; }
+    .event-card { min-height: 155px; grid-template-columns: 82px 1fr; border-radius: 10px; }
+    .event-details { padding: .8rem; }
     .event-details .eyebrow { margin-bottom: .25rem; font-size: .64rem; }
-    .event-details h2 { margin-bottom: .55rem; font-size: 1.35rem; }
-    .event-summary, .event-note { display: none; }
-    .event-meta { margin: .6rem 0 .8rem; gap: .35rem; font-size: .82rem; }
+    .event-details h2 { margin-bottom: .4rem; font-size: 1.18rem; }
+    .event-meta { margin: .45rem 0 .6rem; gap: .3rem; font-size: .74rem; }
     .event-meta p:not(:first-child) { display: none; }
-    .event-details .button { min-height: 40px; padding: .55rem .75rem; font-size: .78rem; }
+    .event-details .button { min-height: 36px; padding: .42rem .6rem; font-size: .7rem; }
     .time-item { padding: 1.5rem; }
     .sunday-mass strong { font-size: 2.25rem; }
     .weekday-masses { display: grid; }
