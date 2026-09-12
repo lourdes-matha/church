@@ -17,7 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {
             // Populate Service Times (if on homepage)
             const timeMass = document.getElementById('time-mass');
             if (timeMass) {
-                document.getElementById('time-confession').textContent = SITE_DATA.timings.confession;
+                const confessionTimes = document.getElementById('time-confession');
+                if (confessionTimes) {
+                    confessionTimes.innerHTML = SITE_DATA.timings.confession
+                        .split(' · ')
+                        .map(time => `<strong>${time}</strong>`)
+                        .join(' · ');
+                }
                 const timeCatechism = document.getElementById('time-catechism');
                 if (timeCatechism) timeCatechism.textContent = SITE_DATA.timings.catechism;
             }
