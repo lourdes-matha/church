@@ -153,6 +153,11 @@ section { padding: 6rem max(1.5rem, calc((100% - 1180px) / 2)); }
 .page-header { padding-top: 5rem; padding-bottom: 5rem; }
 #pastor-message, #downloads-page, #events-page { background: var(--mist); }
 #events-page { padding-top: 3.25rem; }
+main > .service-section:first-child:not(#service-times),
+main > .visit-section:first-child,
+main > .page-header:first-child,
+main > #events-page:first-child,
+#support-our-parish { padding-top: 3rem; }
 .events-page-header { margin-bottom: 2.5rem; }
 #pastor-message .pastor-content { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; max-width: 1000px; margin: auto; }
 .pastor-photo { width: 300px; height: 300px; object-fit: cover; object-position: center 30%; border-radius: 24px; border: 6px solid #fff; box-shadow: var(--shadow); margin: auto; }
@@ -247,6 +252,11 @@ footer { background: #071f37; color: #dfe9f1; }
     .hero-actions .button { width: 100%; }
     section { padding: 4.5rem 1rem; }
     #events-page { padding-top: 2.5rem; }
+    main > .service-section:first-child:not(#service-times),
+    main > .visit-section:first-child,
+    main > .page-header:first-child,
+    main > #events-page:first-child,
+    #support-our-parish { padding-top: 2rem; }
     .events-page-header { margin-bottom: 1.5rem; }
     .upcoming-events-grid { gap: .85rem; }
     .event-card { min-height: 155px; grid-template-columns: 82px 1fr; border-radius: 10px; }
