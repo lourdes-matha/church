@@ -192,7 +192,10 @@ main > #events-page:first-child,
 .instagram-events-card:hover { border-color: var(--gold-500); transform: translateY(-2px); }
 .instagram-events-icon { width: 58px; height: 58px; display: grid; place-items: center; border-radius: 16px; background: linear-gradient(135deg, #833ab4, #e1306c, #fcb045); color: #fff; font-size: 1.8rem; }
 .instagram-events-card strong, .instagram-events-card small { display: block; }
-.past-events-grid { max-width: 1050px; margin: 1.25rem auto 0; display: grid; grid-template-columns: minmax(0, 520px); gap: 1.25rem; }
+.past-events-grid { max-width: 1050px; margin: 1.25rem auto 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.past-events-grid .event-card { min-height: 190px; grid-template-columns: 100px 1fr; }
+.past-events-grid .event-details { padding: .9rem; }
+.past-events-grid .event-details h2 { font-size: 1.15rem; }
 .instagram-events-card strong { font-family: "Merriweather", serif; font-size: 1.15rem; }
 .instagram-events-card small { margin-top: .25rem; color: var(--muted); font-size: .92rem; }
 .instagram-events-card > i { color: var(--marian-700); }
@@ -233,6 +236,7 @@ footer { background: #071f37; color: #dfe9f1; }
     .welcome-section, .visit-section { grid-template-columns: 1fr; }
     .giving-grid { grid-template-columns: 1fr; }
     .upcoming-events-grid { grid-template-columns: 1fr; }
+    .past-events-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .event-card { min-height: 190px; grid-template-columns: 110px 1fr; }
     .welcome-mark { min-height: 280px; }
     .map-container { min-height: 360px; }
@@ -260,6 +264,7 @@ footer { background: #071f37; color: #dfe9f1; }
     .events-page-header { margin-bottom: 1.5rem; }
     .upcoming-events-grid { gap: .85rem; }
     .event-card { min-height: 155px; grid-template-columns: 82px 1fr; border-radius: 10px; }
+    .past-events-grid { grid-template-columns: 1fr; }
     .event-details { padding: .8rem; }
     .event-details .eyebrow { margin-bottom: .25rem; font-size: .64rem; }
     .event-details h2 { margin-bottom: .4rem; font-size: 1.18rem; }
