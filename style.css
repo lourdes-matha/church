@@ -91,7 +91,6 @@ section { padding: 6rem max(1.5rem, calc((100% - 1180px) / 2)); }
 .weekday-schedule { padding: .15rem .15rem 0; }
 .weekday-heading { display: block; margin-bottom: .35rem; color: var(--marian-900); font-family: "Merriweather", serif; font-size: 1rem; }
 .weekday-masses { display: flex; flex-wrap: wrap; gap: .35rem 1rem; color: var(--muted); font-size: .92rem; }
-.weekday-masses span + span::before { content: "•"; margin-right: 1rem; color: var(--gold-500); }
 .time-item .appointment-note { margin-top: .75rem; color: var(--ink); font-size: .9rem; font-weight: 700; }
 .card-link, .text-link { display: inline-flex; gap: .45rem; align-items: center; color: var(--marian-700); text-decoration: none; font-weight: 800; }
 .card-link { position: absolute; left: 2rem; bottom: 1.7rem; font-size: .88rem; }
@@ -193,6 +192,7 @@ main > #events-page:first-child,
 .instagram-events-card:hover { border-color: var(--gold-500); transform: translateY(-2px); }
 .instagram-events-icon { width: 58px; height: 58px; display: grid; place-items: center; border-radius: 16px; background: linear-gradient(135deg, #833ab4, #e1306c, #fcb045); color: #fff; font-size: 1.8rem; }
 .instagram-events-card strong, .instagram-events-card small { display: block; }
+.past-events-grid { max-width: 1050px; margin: 1.25rem auto 0; display: grid; grid-template-columns: minmax(0, 520px); gap: 1.25rem; }
 .instagram-events-card strong { font-family: "Merriweather", serif; font-size: 1.15rem; }
 .instagram-events-card small { margin-top: .25rem; color: var(--muted); font-size: .92rem; }
 .instagram-events-card > i { color: var(--marian-700); }
@@ -269,7 +269,6 @@ footer { background: #071f37; color: #dfe9f1; }
     .time-item { padding: 1.5rem; }
     .sunday-mass strong { font-size: 2.25rem; }
     .weekday-masses { display: grid; }
-    .weekday-masses span + span::before { content: none; }
     .welcome-mark { min-height: 230px; }
     .welcome-mark img { width: 150px; }
     .connect-grid { width: 100%; flex-direction: column; }
