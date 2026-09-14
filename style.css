@@ -29,6 +29,14 @@ a:focus-visible, button:focus-visible { outline: 3px solid #f4c85e; outline-offs
 
 .skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 9999; background: #fff; color: var(--marian-900); padding: .75rem 1rem; border-radius: 8px; font-weight: 700; }
 .skip-link:focus { top: 1rem; }
+
+.home-social-rail { position: fixed; z-index: 45; right: 0; top: 50%; display: flex; flex-direction: column; overflow: hidden; border-radius: 12px 0 0 12px; box-shadow: 0 8px 24px rgba(5,27,49,.22); transform: translateY(-50%); }
+.home-social-link { width: 54px; height: 54px; display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; font-size: 1.25rem; transition: width .2s ease, filter .2s ease; }
+.home-social-link span { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.home-social-link.facebook { background: #1877f2; }
+.home-social-link.instagram { background: linear-gradient(135deg, #833ab4, #e1306c, #fcb045); }
+.home-social-link.whatsapp { background: #25d366; }
+.home-social-link:hover { filter: brightness(1.08); }
 .announcement-bar { background: var(--marian-900); color: #fff; font-size: .9rem; }
 .announcement-inner { width: min(1180px, calc(100% - 2rem)); min-height: 42px; margin: auto; display: flex; align-items: center; justify-content: center; gap: .75rem; }
 .announcement-label { background: var(--gold-500); color: #142232; padding: .18rem .55rem; border-radius: 999px; font-size: .72rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
@@ -251,6 +259,9 @@ footer { background: #071f37; color: #dfe9f1; }
 }
 
 @media (max-width: 620px) {
+    .home-social-rail { position: static; width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); border-radius: 0; box-shadow: 0 5px 16px rgba(5,27,49,.14); transform: none; }
+    .home-social-link { width: auto; height: 56px; gap: .45rem; font-size: 1rem; font-weight: 700; }
+    .home-social-link span { position: static; width: auto; height: auto; overflow: visible; clip: auto; white-space: normal; font-size: .78rem; }
     .announcement-inner { padding: .55rem 0; flex-wrap: wrap; gap: .4rem .65rem; }
     .announcement-label { display: none; }
     .nav-brand { font-size: 1rem; }
