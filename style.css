@@ -259,7 +259,8 @@ footer { background: #071f37; color: #dfe9f1; }
 }
 
 @media (max-width: 620px) {
-    .home-social-rail { position: static; width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); border-radius: 0; box-shadow: 0 5px 16px rgba(5,27,49,.14); transform: none; }
+    .home-page { padding-bottom: calc(56px + env(safe-area-inset-bottom)); }
+    .home-social-rail { position: fixed; z-index: 100; left: 0; right: 0; bottom: 0; top: auto; width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); padding-bottom: env(safe-area-inset-bottom); border-radius: 0; box-shadow: 0 -5px 16px rgba(5,27,49,.18); transform: none; }
     .home-social-link { width: auto; height: 56px; gap: .45rem; font-size: 1rem; font-weight: 700; }
     .home-social-link span { position: static; width: auto; height: auto; overflow: visible; clip: auto; white-space: normal; font-size: .78rem; }
     .announcement-inner { padding: .55rem 0; flex-wrap: wrap; gap: .4rem .65rem; }
