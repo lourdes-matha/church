@@ -95,7 +95,7 @@ section { padding: 6rem max(1.5rem, calc((100% - 1180px) / 2)); }
 .sunday-mass { padding: 1rem 1.15rem; border: 2px solid var(--gold-500); border-radius: 14px; background: linear-gradient(135deg, #fff9e9, #f4e2ad); color: var(--marian-900); box-shadow: 0 8px 20px rgba(201,154,61,.18); }
 .sunday-mass span, .sunday-mass strong { display: block; }
 .sunday-mass span { font-size: 1.05rem; font-weight: 800; letter-spacing: .02em; }
-.sunday-mass strong { margin-top: .1rem; font-family: "Merriweather", serif; font-size: clamp(2rem, 4vw, 2.65rem); line-height: 1.1; }
+.sunday-mass strong { margin-top: .1rem; font-family: "Merriweather", serif; font-size: clamp(1.55rem, 2.5vw, 2rem); line-height: 1.1; white-space: nowrap; }
 .weekday-schedule { padding: .15rem .15rem 0; }
 .weekday-heading { display: block; margin-bottom: .35rem; color: var(--marian-900); font-family: "Merriweather", serif; font-size: 1rem; }
 .weekday-masses { display: flex; flex-wrap: wrap; gap: .35rem 1rem; color: var(--muted); font-size: .92rem; }
@@ -295,7 +295,7 @@ footer { background: #071f37; color: #dfe9f1; }
     .event-meta p:not(:first-child) { display: none; }
     .event-details .button { min-height: 36px; padding: .42rem .6rem; font-size: .7rem; }
     .time-item { padding: 1.5rem; }
-    .sunday-mass strong { font-size: 2.25rem; }
+    .sunday-mass strong { font-size: clamp(1.55rem, 7vw, 2rem); }
     .weekday-masses { display: grid; }
     .welcome-mark { min-height: 230px; }
     .welcome-mark img { width: 150px; }
