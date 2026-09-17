@@ -90,14 +90,33 @@ document.addEventListener("DOMContentLoaded", function() {
                 const hamburger = document.querySelector('.hamburger-menu');
                 const navLinks = document.querySelector('.nav-links');
                 const icon = hamburger.querySelector('i');
-                const dropdownToggle = document.querySelector('.nav-dropdown-toggle');
-                if (dropdownToggle) {
-                    dropdownToggle.addEventListener('click', () => {
+                const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+                dropdownToggles.forEach(dropdownToggle => {
+                    dropdownToggle.addEventListener('click', (event) => {
+                        event.stopPropagation();
                         const dropdown = dropdownToggle.closest('.nav-dropdown');
                         const isOpen = dropdown.classList.toggle('nav-dropdown-open');
                         dropdownToggle.setAttribute('aria-expanded', String(isOpen));
+
+                        if (!isOpen) {
+                            dropdown.querySelectorAll('.nav-dropdown-open').forEach(child => {
+                                child.classList.remove('nav-dropdown-open');
+                                const childToggle = child.querySelector(':scope > .nav-dropdown-toggle');
+                                if (childToggle) childToggle.setAttribute('aria-expanded', 'false');
+                            });
+                        }
                     });
-                }
+                });
+
+                document.addEventListener('click', (event) => {
+                    if (!event.target.closest('.nav-dropdown')) {
+                        document.querySelectorAll('.nav-dropdown-open').forEach(dropdown => {
+                            dropdown.classList.remove('nav-dropdown-open');
+                            const toggle = dropdown.querySelector(':scope > .nav-dropdown-toggle');
+                            if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                        });
+                    }
+                });
                 hamburger.addEventListener('click', () => {
                     const isOpen = navLinks.classList.toggle('nav-links-active');
                     hamburger.setAttribute('aria-expanded', String(isOpen));
@@ -113,6 +132,11 @@ document.addEventListener("DOMContentLoaded", function() {
                         hamburger.setAttribute('aria-label', 'Open navigation menu');
                         icon.classList.add('fa-bars');
                         icon.classList.remove('fa-xmark');
+                        document.querySelectorAll('.nav-dropdown-open').forEach(dropdown => {
+                            dropdown.classList.remove('nav-dropdown-open');
+                            const toggle = dropdown.querySelector(':scope > .nav-dropdown-toggle');
+                            if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                        });
                     }
                 });
             });
