@@ -98,6 +98,21 @@ document.addEventListener("DOMContentLoaded", function() {
                         const isOpen = dropdown.classList.toggle('nav-dropdown-open');
                         dropdownToggle.setAttribute('aria-expanded', String(isOpen));
 
+                        if (isOpen) {
+                            Array.from(dropdown.parentElement.children).forEach(sibling => {
+                                if (sibling !== dropdown && sibling.classList.contains('nav-dropdown')) {
+                                    sibling.classList.remove('nav-dropdown-open');
+                                    const siblingToggle = sibling.querySelector(':scope > .nav-dropdown-toggle');
+                                    if (siblingToggle) siblingToggle.setAttribute('aria-expanded', 'false');
+                                    sibling.querySelectorAll('.nav-dropdown-open').forEach(child => {
+                                        child.classList.remove('nav-dropdown-open');
+                                        const childToggle = child.querySelector(':scope > .nav-dropdown-toggle');
+                                        if (childToggle) childToggle.setAttribute('aria-expanded', 'false');
+                                    });
+                                }
+                            });
+                        }
+
                         if (!isOpen) {
                             dropdown.querySelectorAll('.nav-dropdown-open').forEach(child => {
                                 child.classList.remove('nav-dropdown-open');
