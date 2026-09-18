@@ -353,7 +353,17 @@ footer { background: #071f37; color: #dfe9f1; }
     .family-unit-image { width: 160px; height: 110px; }
     .family-unit-content { padding: 1.2rem; }
     .family-unit-content h2 { font-size: 1.3rem; }
-    .family-unit-roles > div { grid-template-columns: 1fr; gap: .1rem; padding: .55rem 0; }
-    .family-unit-roles dt { font-size: .8rem; }
-    .family-unit-roles dd { font-size: .86rem; }
+    .family-unit-roles > div {
+        grid-template-columns: minmax(0, 1.38fr) minmax(0, 1fr);
+        align-items: baseline;
+        gap: .45rem;
+        padding: .5rem 0;
+    }
+    .family-unit-roles dt,
+    .family-unit-roles dd {
+        font-size: .64rem;
+        line-height: 1.3;
+        white-space: nowrap;
+        overflow-wrap: normal;
+    }
 }
