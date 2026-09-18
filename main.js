@@ -74,6 +74,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.querySelector('.nav-brand span').textContent = data.nameShort;
 
                 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                document.querySelectorAll('[data-page][aria-current]').forEach(link => {
+                    link.removeAttribute('aria-current');
+                });
                 const currentLink = document.querySelector(`[data-page="${currentPage}"]`);
                 if (currentLink) currentLink.setAttribute('aria-current', 'page');
 
