@@ -70,14 +70,13 @@ document.addEventListener("DOMContentLoaded", function() {
             };
 
             // Load Navbar and inject data
-            loadComponent("#navbar-placeholder", "navbar.html", (data) => {
+            loadComponent("#navbar-placeholder", "navbar.html?v=20260918-active-page-fix", (data) => {
                 document.querySelector('.nav-brand span').textContent = data.nameShort;
 
                 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-                document.querySelectorAll('[data-page][aria-current]').forEach(link => {
-                    link.removeAttribute('aria-current');
-                });
-                const currentLink = document.querySelector(`[data-page="${currentPage}"]`);
+                const pageLinks = document.querySelectorAll('.nav-links a[data-page]');
+                pageLinks.forEach(link => link.removeAttribute('aria-current'));
+                const currentLink = Array.from(pageLinks).find(link => link.dataset.page === currentPage);
                 if (currentLink) currentLink.setAttribute('aria-current', 'page');
 
                 // --- NEW: Populate dynamic nav links from data.json ---
