@@ -518,3 +518,7 @@ footer { background: #071f37; color: #dfe9f1; }
 @media (max-width: 420px) {
     .former-trustees-list { grid-template-columns: 1fr; }
 }
+
+
+/* Center Parish Council heading */
+.council-heading { text-align: center; }
