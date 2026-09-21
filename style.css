@@ -443,3 +443,38 @@ footer { background: #071f37; color: #dfe9f1; }
     .leadership-card { min-height: 0; padding: 1rem; }
     .council-members li { padding: .75rem .9rem; }
 }
+
+
+/* Refined Administration layout */
+.administration-heading h1 { font-size: clamp(1.85rem, 3.5vw, 2.75rem); }
+.pastor-profile-text h2 { margin-top: 0; }
+.parish-leadership-compact { display: block; padding: 1.4rem 1.6rem; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; box-shadow: var(--shadow); }
+.trustees-inline,
+.secretary-inline { display: flex; align-items: baseline; gap: 1.25rem; }
+.trustees-inline h2,
+.secretary-inline h2 { margin: 0; flex: 0 0 auto; font-family: "Merriweather", serif; color: var(--marian-900); }
+.trustees-inline h2 { font-size: 1.45rem; }
+.trustees-inline p,
+.secretary-inline p { margin: 0; display: flex; align-items: center; gap: .75rem; color: var(--marian-900); }
+.secretary-inline { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.secretary-inline h2 { font-size: 1.05rem; }
+.secretary-inline p { font-size: .95rem; }
+.council-section-compact .council-members-box { padding: 1.25rem 1.35rem; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; box-shadow: var(--shadow); }
+.council-section-compact .council-members { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; }
+.council-section-compact .council-members li { padding: .5rem .75rem; border: 0; border-left: 3px solid var(--gold); border-radius: 0; box-shadow: none; background: transparent; font-size: .9rem; }
+
+@media (max-width: 900px) {
+    .council-section-compact .council-members { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: .35rem; }
+}
+
+@media (max-width: 620px) {
+    .trustees-inline,
+    .secretary-inline { align-items: flex-start; gap: .55rem; }
+    .trustees-inline { flex-wrap: wrap; }
+    .trustees-inline h2 { width: 100%; font-size: 1.25rem; }
+    .trustees-inline p { gap: .5rem; flex-wrap: wrap; font-size: .88rem; }
+    .secretary-inline h2 { font-size: .92rem; }
+    .secretary-inline p { font-size: .86rem; }
+    .council-section-compact .council-members { grid-template-columns: 1fr; }
+    .council-section-compact .council-members li { padding: .45rem .65rem; font-size: .86rem; }
+}
