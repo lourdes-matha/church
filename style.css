@@ -401,3 +401,45 @@ footer { background: #071f37; color: #dfe9f1; }
     .coordinator-grid { grid-template-columns: 1fr; gap: .75rem; }
     .coordinator-card { padding: 1rem 1.1rem; }
 }
+
+
+/* Parish Administration */
+.administration-section { padding: 4.5rem 1.5rem; background: var(--mist); }
+.administration-heading { max-width: 1080px; }
+.administration-heading h1,
+.pastor-profile h2,
+.leadership-heading h2 { font-family: "Merriweather", serif; color: var(--marian-900); }
+.administration-heading h1 { font-size: clamp(2.25rem, 5vw, 4rem); }
+.pastor-profile { width: min(1080px, 100%); margin: 1.5rem auto 0; padding: 1.5rem; display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 2rem; align-items: center; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; box-shadow: var(--shadow); }
+.administration-pastor-photo { width: 210px; height: 210px; object-fit: cover; object-position: top center; border-radius: 16px; }
+.pastor-profile h2 { margin: .25rem 0 .8rem; font-size: clamp(1.55rem, 3vw, 2.25rem); }
+.pastor-profile-text > p:last-child { margin: 0; color: var(--muted); line-height: 1.8; }
+.parish-leadership { width: min(1080px, 100%); margin: 3rem auto 0; display: grid; grid-template-columns: 1.35fr .65fr; gap: 1.5rem; align-items: start; }
+.leadership-heading { margin-bottom: 1rem; }
+.leadership-heading h2 { margin: .25rem 0 0; font-size: clamp(1.45rem, 3vw, 2rem); }
+.leadership-card-grid { display: grid; gap: 1rem; }
+.trustees-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.secretary-grid { grid-template-columns: 1fr; }
+.leadership-card { min-height: 110px; padding: 1.2rem; display: flex; gap: .85rem; align-items: center; border: 1px solid var(--line); border-top: 4px solid var(--gold); border-radius: 14px; background: #fff; box-shadow: var(--shadow); }
+.leadership-card i { color: var(--gold); font-size: 1.2rem; }
+.leadership-card h3 { margin: 0; color: var(--marian-900); font-family: "Merriweather", serif; font-size: 1rem; line-height: 1.4; }
+.council-section { width: min(1080px, 100%); margin: 3rem auto 0; }
+.council-members { margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .8rem; list-style: none; }
+.council-members li { padding: .85rem 1rem; border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 10px; background: #fff; color: var(--marian-900); font-weight: 700; box-shadow: 0 8px 22px rgba(20,54,82,.07); }
+
+@media (max-width: 900px) {
+    .parish-leadership { grid-template-columns: 1fr; }
+    .council-members { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 620px) {
+    .administration-section { padding: 3rem 1rem; }
+    .pastor-profile { padding: 1.15rem; grid-template-columns: 1fr; gap: 1.15rem; }
+    .administration-pastor-photo { width: 150px; height: 150px; margin: 0 auto; }
+    .pastor-profile-text { text-align: center; }
+    .pastor-profile-text > p:last-child { text-align: left; }
+    .parish-leadership, .council-section { margin-top: 2.25rem; }
+    .trustees-grid, .council-members { grid-template-columns: 1fr; }
+    .leadership-card { min-height: 0; padding: 1rem; }
+    .council-members li { padding: .75rem .9rem; }
+}
