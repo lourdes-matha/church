@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
             };
 
             // Load Navbar and inject data
-            loadComponent("#navbar-placeholder", "navbar.html?v=20260918-active-page-fix", (data) => {
+            loadComponent("#navbar-placeholder", "navbar.html?v=20260921-administration-menu", (data) => {
                 document.querySelector('.nav-brand span').textContent = data.nameShort;
 
                 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
