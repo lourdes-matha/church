@@ -523,3 +523,10 @@ footer { background: #071f37; color: #dfe9f1; }
 
 /* Center Parish Council heading */
 .council-heading { text-align: center; }
+
+
+/* Keep only the current page highlighted inside an open submenu */
+.nav-dropdown-menu:has(a[aria-current="page"]) a:hover:not([aria-current="page"]) {
+    color: #34465a;
+    background: transparent;
+}
