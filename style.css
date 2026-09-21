@@ -530,3 +530,10 @@ footer { background: #071f37; color: #dfe9f1; }
     color: #34465a;
     background: transparent;
 }
+
+
+/* Avoid showing a previous top-level page as selected while another menu is open */
+.nav-links:has(.nav-dropdown-open) > li > a[aria-current="page"] {
+    color: #34465a;
+    background: transparent;
+}
