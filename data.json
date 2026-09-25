@@ -21,8 +21,8 @@
   "downloads": {
     "pdfs": [
       {
-        "title": "New Member Registration Form",
-        "description": "Please download the form and fill out the required information, sign it and email it to: lourdesmatha.trustee@gmail.com.",
+        "title": "Parish Registration - Downloadable Form",
+        "description": "Download and complete the form, then email the signed form to lourdemathachurchwindsor@gmail.com or submit it to the Parish Priest or a Trustee.",
         "url": "downloads/new-member-registration-form.pdf"
       },
       {
@@ -32,6 +32,11 @@
       }
     ],
     "googleForms": [
+      {
+        "title": "Parish Registration - Online Form",
+        "description": "Complete and submit the parish registration form online.",
+        "url": "https://docs.google.com/forms/d/1xA_0RDUST_gKFWHrzAXc9WsKk5kpEm7-BIVBF2z76UE/viewform"
+      },
       {
         "title": "Catechism Registration 2026–2027",
         "description": "Register a student for the 2026–2027 Lourdes Matha Parish Catechism year.",
