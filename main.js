@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     showSelectedEventsSection();
     window.addEventListener('hashchange', showSelectedEventsSection);
 
-    fetch('data.json?v=20260927-registration-documents')
+    fetch('data.json?v=20260928-email-separation')
         .then(response => {
             if (!response.ok) throw new Error('Network response was not ok ' + response.statusText);
             return response.json();
