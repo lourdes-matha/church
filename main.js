@@ -1,6 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    fetch('data.json')
+    const showSelectedEventsSection = () => {
+        const upcomingEvents = document.getElementById('upcoming-events');
+        const earlierEvents = document.getElementById('earlier-events');
+        if (!upcomingEvents || !earlierEvents) return;
+
+        const showEarlier = window.location.hash === '#earlier-events';
+        upcomingEvents.hidden = showEarlier;
+        earlierEvents.hidden = !showEarlier;
+    };
+
+    showSelectedEventsSection();
+    window.addEventListener('hashchange', showSelectedEventsSection);
+
+    fetch('data.json?v=20260927-registration-documents')
         .then(response => {
             if (!response.ok) throw new Error('Network response was not ok ' + response.statusText);
             return response.json();
@@ -29,33 +42,46 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             // Populate Downloads Page
-            const pdfGrid = document.getElementById('pdf-downloads-grid');
-            if (pdfGrid) {
-                const pdfSection = document.getElementById('pdf-downloads-section');
-                if (SITE_DATA.downloads.pdfs.length > 0) pdfSection.hidden = false;
-                SITE_DATA.downloads.pdfs.forEach(pdf => {
-                    const emailInstruction = pdf.submissionEmail ? `
-                            <p class="form-email-note">You can also email the completed form to <a href="mailto:${pdf.submissionEmail}"><strong>${pdf.submissionEmail}</strong></a>.</p>` : '';
-                    const tileHTML = `
+            const parishRegistrationCard = document.getElementById('parish-registration-card');
+            if (parishRegistrationCard) {
+                const padFormCard = document.getElementById('pad-form-card');
+                const parishPdf = SITE_DATA.downloads.pdfs.find(pdf => pdf.category === 'parish-registration');
+                const parishOnlineForm = SITE_DATA.downloads.googleForms.find(form => form.category === 'parish-registration');
+                const padForm = SITE_DATA.downloads.pdfs.find(pdf => pdf.category !== 'parish-registration');
+
+                parishRegistrationCard.innerHTML = `
+                    <article class="download-tile registration-combined-card">
+                        <h3>Choose how you would like to register</h3>
+                        <div class="registration-methods">
+                            <div>
+                                <h4>Register Online</h4>
+                                <p>${parishOnlineForm.description}</p>
+                                <a href="${parishOnlineForm.url}" class="button button-primary download-form-link" target="_blank" rel="noopener noreferrer">Register Online</a>
+                            </div>
+                            <div>
+                                <h4>Download the Form</h4>
+                                <p>${parishPdf.description}</p>
+                                <a href="${parishPdf.url}" class="button button-primary download-form-link" download>Download Form</a>
+                            </div>
+                        </div>
+                        <div class="supporting-documents">
+                            <h4>Which supporting documents are applicable to your family?</h4>
+                            <ul>
+                                <li>If your Status is Single, please attach the Baptism Certificate and Reference letter.</li>
+                                <li>If your Status is Married, please attach the Sacramental Marriage Certificate (from the Church).</li>
+                                <li>If your Status is Married and have children, please attach the Sacramental Marriage Certificate and children's Baptism certificates.</li>
+                            </ul>
+                        </div>
+                    </article>`;
+
+                if (padForm) {
+                    padFormCard.innerHTML = `
                         <article class="download-tile">
-                            <i class="fas fa-file-pdf"></i>
-                            <h3>${pdf.title}</h3>
-                            <p>${pdf.description}</p>
-                            <a href="${pdf.url}" class="button button-primary download-form-link" download>Download form</a>
-                            ${emailInstruction}
+                            <h3>${padForm.title}</h3>
+                            <p>${padForm.description}</p>
+                            <a href="${padForm.url}" class="button button-primary download-form-link" download>Download Form</a>
                         </article>`;
-                    pdfGrid.innerHTML += tileHTML;
-                });
-                const gformGrid = document.getElementById('gform-downloads-grid');
-                SITE_DATA.downloads.googleForms.forEach(form => {
-                    const tileHTML = `
-                        <a href="${form.url}" class="download-tile" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-wpforms"></i>
-                            <h3>${form.title}</h3>
-                            <p>${form.description}</p>
-                        </a>`;
-                    gformGrid.innerHTML += tileHTML;
-                });
+                }
             }
 
             // Function to load components (navbar, footer)
@@ -70,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
             };
 
             // Load Navbar and inject data
-            loadComponent("#navbar-placeholder", "navbar.html?v=20260921-administration-menu", (data) => {
+            loadComponent("#navbar-placeholder", "navbar.html?v=20260927-clean-update", (data) => {
                 document.querySelector('.nav-brand span').textContent = data.nameShort;
 
                 const currentPage = window.location.pathname.split('/').pop() || 'index.html';

@@ -40,7 +40,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #f4c85e; outline-offs
 .announcement-bar { background: var(--marian-900); color: #fff; font-size: .9rem; }
 .announcement-inner { width: min(1180px, calc(100% - 2rem)); min-height: 42px; margin: auto; display: flex; align-items: center; justify-content: center; gap: .75rem; }
 .announcement-label { background: var(--gold-500); color: #142232; padding: .18rem .55rem; border-radius: 999px; font-size: .72rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
-.announcement-inner a { font-weight: 700; text-underline-offset: 3px; }
+.announcement-inner a { display: flex; align-items: center; justify-content: center; gap: .75rem; color: inherit; font-weight: 700; text-underline-offset: 3px; }
 .announcement-inner a i { margin-left: .25rem; }
 
 #navbar-placeholder { position: sticky; top: 0; z-index: 1000; min-height: 78px; background: rgba(255,255,255,.97); }
@@ -183,7 +183,23 @@ main > #events-page:first-child,
 .pastor-photo { width: 300px; height: 300px; object-fit: cover; object-position: center 30%; border-radius: 24px; border: 6px solid #fff; box-shadow: var(--shadow); margin: auto; }
 .pastor-text { flex: 1; min-width: 300px; }
 .downloads-subtitle { margin: 2.5rem 0 1.25rem; color: var(--marian-900); text-align: center; }
+.downloads-subtitle-first { margin-top: 2rem; }
 .downloads-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+.registration-options-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr); gap: 1.25rem; align-items: stretch; }
+.registration-options-grid section { display: flex; flex-direction: column; padding: 0; }
+.registration-options-grid .download-tile { height: 100%; }
+.registration-combined-card > h3 { margin-bottom: 1.25rem; }
+.registration-methods { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.registration-methods > div { display: flex; flex-direction: column; align-items: center; padding: 0 1rem; }
+.registration-methods > div + div { border-left: 1px solid var(--line); }
+.registration-methods h4 { margin: 0 0 .65rem; color: var(--marian-900); font-family: Georgia, 'Times New Roman', serif; font-size: 1.15rem; }
+.registration-methods p { width: 100%; flex-grow: 1; text-align: left; }
+.supporting-documents { margin-top: 1.6rem; padding-top: 1.35rem; border-top: 1px solid var(--line); text-align: left; }
+.supporting-documents h4 { margin: 0; color: var(--marian-900); font-family: Georgia, 'Times New Roman', serif; font-size: 1.05rem; }
+.supporting-documents ul { margin: .8rem 0 0; padding-left: 1.25rem; color: var(--muted); }
+.supporting-documents li { line-height: 1.65; }
+.supporting-documents li + li { margin-top: .45rem; }
+#pad-form-card .download-tile p { text-align: left; }
 .download-tile { padding: 2rem; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink); text-decoration: none; text-align: center; box-shadow: 0 8px 22px rgba(11,45,79,.06); }
 .download-tile:hover { border-color: var(--gold-500); }
 .download-tile i { margin-bottom: 1rem; color: var(--marian-700); font-size: 2rem; }
@@ -306,6 +322,9 @@ footer { background: #071f37; color: #dfe9f1; }
     .event-meta { margin: .45rem 0 .6rem; gap: .3rem; font-size: .74rem; }
     .event-meta p:not(:first-child) { display: none; }
     .event-details .button { min-height: 36px; padding: .42rem .6rem; font-size: .7rem; }
+    .registration-options-grid, .registration-methods { grid-template-columns: 1fr; }
+    .registration-methods > div { padding: 0; }
+    .registration-methods > div + div { padding-top: 1.25rem; border-top: 1px solid var(--line); border-left: 0; }
     .time-item { padding: 1.5rem; }
     .sunday-mass strong { font-size: clamp(1.55rem, 7vw, 2rem); }
     .weekday-masses { display: grid; }
