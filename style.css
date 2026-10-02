@@ -561,3 +561,10 @@ footer { background: #071f37; color: #dfe9f1; }
     color: #34465a;
     background: transparent;
 }
+/* Keep desktop navigation labels on one line */
+@media (min-width: 1100px) {
+    .nav-links > li > a,
+    .nav-links > li > .nav-dropdown-toggle {
+        white-space: nowrap;
+    }
+}
