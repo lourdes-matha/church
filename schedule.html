@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Schedule | Lourdes Matha Windsor</title>
+    <meta name="description" content="Weekly Holy Qurbana, prayer and parish schedule for Lourdes Matha Syro-Malabar Catholic Church in Windsor.">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        .weekly-page {
+            padding: 24px 14px 40px;
+            background: #f4eee4;
+        }
+
+        .weekly-poster {
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            background: #fffaf0;
+            border: 1px solid #dec99c;
+            border-radius: 22px;
+            box-shadow: 0 12px 40px rgba(57, 34, 18, 0.12);
+        }
+
+        .weekly-hero {
+            padding: 34px 22px;
+            text-align: center;
+            color: white;
+            background:
+                linear-gradient(rgba(15, 35, 47, 0.55), rgba(15, 35, 47, 0.85)),
+                url("images/Church_1200_630.jpg") center / cover;
+        }
+
+        .weekly-logo {
+            width: 86px;
+            height: 86px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .weekly-hero h1 {
+            color: white;
+            font-family: "Merriweather", serif;
+            font-size: clamp(26px, 5vw, 42px);
+            margin: 14px 0 8px;
+        }
+
+        .weekly-hero p {
+            margin: 0;
+            color: #fff1d2;
+            font-size: 15px;
+        }
+
+        .weekly-banner {
+            padding: 20px 16px;
+            text-align: center;
+            background: linear-gradient(120deg, #611f30, #90354b);
+            border-top: 3px solid #d5b46e;
+            border-bottom: 3px solid #d5b46e;
+        }
+
+        .weekly-banner h2 {
+            margin: 0 0 6px;
+            color: #fff5d9;
+            font-family: "Merriweather", serif;
+            font-size: clamp(24px, 5vw, 34px);
+        }
+
+        .weekly-banner p {
+            margin: 0;
+            color: #fff1d2;
+        }
+
+        .weekly-events {
+            display: grid;
+            gap: 18px;
+            padding: 24px;
+        }
+
+        .weekly-day {
+            display: grid;
+            grid-template-columns: 150px minmax(0, 1fr);
+            overflow: hidden;
+            border: 1px solid #e3d6ba;
+            border-radius: 14px;
+            background: white;
+        }
+
+        .weekly-date {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 12px;
+            background: var(--day-colour, #853b41);
+            color: white;
+            text-align: center;
+        }
+
+        .weekly-date .day-name {
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+        .weekly-date .day-number {
+            font-family: "Merriweather", serif;
+            font-size: 46px;
+            line-height: 1.2;
+            margin: 6px 0;
+        }
+
+        .weekly-date .day-month {
+            font-size: 14px;
+        }
+
+        .weekly-day-content {
+            padding: 10px 22px;
+            min-width: 0;
+        }
+
+        .weekly-event {
+            padding: 16px 0;
+        }
+
+        .weekly-event + .weekly-event {
+            border-top: 1px solid #eee5d5;
+        }
+
+        .weekly-time {
+            color: var(--day-colour, #853b41);
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .weekly-event h3 {
+            font-size: 20px;
+            color: #253747;
+            margin: 5px 0;
+        }
+
+        .weekly-event p {
+            margin: 6px 0 0;
+            color: #54606a;
+        }
+
+        .weekly-responsibility {
+            display: inline-block;
+            padding: 6px 10px;
+            background: #f6efdf;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .weekly-note {
+            margin: 0 24px 24px;
+            padding: 16px;
+            text-align: center;
+            color: #624b2b;
+            background: #f3e8cd;
+            border-radius: 12px;
+        }
+
+        .weekly-address {
+            padding: 18px;
+            text-align: center;
+            background: #203a4e;
+            color: white;
+            font-size: 14px;
+        }
+
+        .weekly-address a {
+            color: #ffe1a3;
+        }
+
+        .weekly-status {
+            margin: 0;
+            text-align: center;
+            color: #54606a;
+        }
+
+        @media (max-width: 600px) {
+            .weekly-events {
+                padding: 16px;
+                gap: 14px;
+            }
+
+            .weekly-day {
+                grid-template-columns: 100px minmax(0, 1fr);
+            }
+
+            .weekly-date {
+                padding: 16px 8px;
+            }
+
+            .weekly-date .day-name {
+                font-size: 14px;
+            }
+
+            .weekly-date .day-number {
+                font-size: 36px;
+            }
+
+            .weekly-day-content {
+                padding: 4px 14px;
+            }
+
+            .weekly-event h3 {
+                font-size: 17px;
+            }
+
+            .weekly-time {
+                font-size: 16px;
+            }
+
+            .weekly-note {
+                margin: 0 16px 16px;
+                font-size: 14px;
+            }
+        }
+    /* START: Compact phone layout — remove this block to revert */
+@media (max-width: 600px) {
+    .weekly-page {
+        padding: 12px 10px 24px;
+    }
+
+    .weekly-hero {
+        padding: 18px 14px;
+    }
+
+    .weekly-logo {
+        width: 58px;
+        height: 58px;
+        padding: 5px;
+    }
+
+    .weekly-hero h1 {
+        font-size: 26px;
+        margin: 8px 0 5px;
+    }
+
+    .weekly-hero p {
+        font-size: 12px;
+    }
+
+    .weekly-banner {
+        padding: 12px;
+    }
+
+    .weekly-banner h2 {
+        font-size: 24px;
+        margin-bottom: 4px;
+    }
+
+    .weekly-banner p {
+        font-size: 14px;
+    }
+
+    .weekly-events {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .weekly-day {
+        grid-template-columns: 82px minmax(0, 1fr);
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .weekly-date {
+        padding: 12px 6px;
+    }
+
+    .weekly-date .day-name {
+        font-size: 13px;
+    }
+
+    .weekly-date .day-number {
+        font-size: 32px;
+        margin: 4px 0;
+    }
+
+    .weekly-date .day-month {
+        font-size: 12px;
+    }
+
+    .weekly-day-content {
+        padding: 0 12px;
+    }
+
+    .weekly-event {
+        padding: 10px 0;
+    }
+
+    .weekly-event h3 {
+        font-size: 16px;
+        line-height: 1.35;
+        margin: 4px 0;
+    }
+
+    .weekly-event p {
+        font-size: 13px;
+        line-height: 1.4;
+        margin-top: 4px;
+    }
+
+    .weekly-time {
+        font-size: 16px;
+    }
+
+    .weekly-responsibility {
+        font-size: 12px;
+        padding: 4px 7px;
+    }
+}
+/* END: Compact phone layout */  
+/* Simplified schedule header */
+.weekly-hero {
+    padding: 24px 16px;
+}
+
+.weekly-hero h1 {
+    margin: 0;
+    font-size: clamp(18px, 3vw, 26px);
+    line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+    .weekly-hero {
+        padding: 18px 14px;
+    }
+
+    .weekly-hero h1 {
+        font-size: 18px;
+        margin: 0;
+    }
+}  
+/* Reduce the gap before Upcoming Events */
+.weekly-note {
+    margin-bottom: 10px;
+}
+
+#upcoming-section {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+@media (max-width: 600px) {
+    .weekly-note {
+        margin-bottom: 8px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main class="weekly-page">
+        <article class="weekly-poster" aria-labelledby="schedule-title">
+            <header class="weekly-hero">
+                <h1>Lourdes Matha Syro-Malabar Catholic Church, Windsor</h1>
+            </header>
+
+            <div class="weekly-banner">
+                <h2 id="schedule-title">Weekly Schedule</h2>
+                <p id="schedule-week">Holy Qurbana · Prayer · Parish Life</p>
+            </div>
+
+            <div id="weekly-events" class="weekly-events" aria-live="polite">
+                <p class="weekly-status">The weekly schedule will appear here.</p>
+            </div>
+
+            <div class="weekly-note">
+                Confession is available every day (except Sundays) by appointment.
+            </div>
+            <section id="upcoming-section" aria-labelledby="upcoming-title" hidden>
+    <div class="weekly-banner">
+        <h2 id="upcoming-title">Upcoming Events</h2>
+        <p>Mark your calendar</p>
+    </div>
+    <div id="upcoming-events" class="weekly-events"></div>
+</section>
+            <footer class="weekly-address">
+                3739 Ypres Avenue, Windsor, Ontario<br>
+                <a href="index.html">lourdesmathawindsor.ca</a>
+            </footer>
+        </article>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="main.js?v=20261003-schedule"></script>
+    <script src="schedule.js?v=20261004-1"></script>
+</body>
+</html>
