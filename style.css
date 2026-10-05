@@ -568,3 +568,21 @@ footer { background: #071f37; color: #dfe9f1; }
         white-space: nowrap;
     }
 }
+/* Keep the brand clear of the desktop menu */
+@media (min-width: 1100px) {
+    .navbar .nav-brand {
+        flex-shrink: 0;
+        margin-right: 20px;
+    }
+
+    .navbar .nav-links {
+        gap: 8px;
+    }
+
+    .navbar .nav-links > li > a,
+    .navbar .nav-links > li > .nav-dropdown-toggle {
+        padding-left: 8px;
+        padding-right: 8px;
+        font-size: 13px;
+    }
+}
