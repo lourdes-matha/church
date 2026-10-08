@@ -586,3 +586,8 @@ footer { background: #071f37; color: #dfe9f1; }
         font-size: 13px;
     }
 }
+/* Match the Mass & Sacraments title to the Our Pastor title */
+.service-section #worship-title {
+    font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+    color: var(--marian-900);
+}

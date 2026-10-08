@@ -153,6 +153,11 @@ const upcomingContainer = document.getElementById("upcoming-events");
 if (upcomingSection && upcomingContainer) {
     upcomingContainer.replaceChildren();
     upcomingSection.hidden = upcomingEvents.length === 0;
+    const upcomingJump = document.getElementById("upcoming-jump");
+
+if (upcomingJump) {
+    upcomingJump.hidden = upcomingEvents.length === 0;
+}
 
     upcomingEvents.forEach(event => {
         const card = element("div", "weekly-day", "");

@@ -330,7 +330,7 @@
         padding: 4px 7px;
     }
 }
-/* END: Compact phone layout */  
+/* END: Compact phone layout */
 /* Simplified schedule header */
 .weekly-hero {
     padding: 24px 16px;
@@ -351,7 +351,7 @@
         font-size: 18px;
         margin: 0;
     }
-}  
+}
 /* Reduce the gap before Upcoming Events */
 .weekly-note {
     margin-bottom: 10px;
@@ -367,20 +367,63 @@
         margin-bottom: 8px;
     }
 }
+.upcoming-jump {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    margin-top: 12px;
+    padding: 8px 18px;
+    box-sizing: border-box;
+    background: #fff5d9;
+    color: #611f30;
+    border: 1px solid #d5b46e;
+    border-radius: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.upcoming-jump[hidden] {
+    display: none;
+}
+
+.upcoming-jump:hover {
+    background: #ffe8b0;
+}
+
+.upcoming-jump:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 3px;
+}
+
+#upcoming-section {
+    scroll-margin-top: 110px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
     </style>
+
 </head>
 <body>
     <div id="navbar-placeholder"></div>
 
     <main class="weekly-page">
         <article class="weekly-poster" aria-labelledby="schedule-title">
-            <header class="weekly-hero">
-                <h1>Lourdes Matha Syro-Malabar Catholic Church, Windsor</h1>
-            </header>
+
 
             <div class="weekly-banner">
                 <h2 id="schedule-title">Weekly Schedule</h2>
                 <p id="schedule-week">Holy Qurbana · Prayer · Parish Life</p>
+                <a id="upcoming-jump"
+   class="upcoming-jump"
+   href="#upcoming-section"
+   hidden>
+    Upcoming Events ↓
+</a>
             </div>
 
             <div id="weekly-events" class="weekly-events" aria-live="polite">
@@ -406,6 +449,6 @@
 
     <div id="footer-placeholder"></div>
     <script src="main.js?v=20261003-schedule"></script>
-    <script src="schedule.js?v=20261004-1"></script>
+    <script src="schedule.js?v=20261008-1"></script>
 </body>
 </html>
