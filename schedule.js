@@ -182,7 +182,33 @@ if (upcomingJump) {
             ));
         }
 
-        item.append(element("h3", "", event.Event));
+        const title = element("h3", "", event.Event);
+let eventUrl = null;
+
+if (event.Link) {
+    try {
+        const candidate = new URL(event.Link, window.location.href);
+
+        if (["https:", "http:"].includes(candidate.protocol)) {
+            eventUrl = candidate.href;
+        }
+    } catch {
+        // Invalid links leave the event non-clickable.
+    }
+}
+
+if (eventUrl) {
+    const titleLink = element(
+    "a", "upcoming-event-link", `${event.Event} ↗`
+);
+    titleLink.href = eventUrl;
+    titleLink.target = "_blank";
+    titleLink.rel = "noopener noreferrer";
+    title.replaceChildren(titleLink);
+}
+
+item.append(title);
+
 
         if (event.Details) {
             item.append(element("p", "", event.Details));

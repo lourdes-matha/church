@@ -404,6 +404,45 @@
     html {
         scroll-behavior: smooth;
     }
+}   .schedule-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+    color: #611f30;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.weekly-note .schedule-action {
+    margin-left: 8px;
+}
+
+.upcoming-event-link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.schedule-action:focus-visible,
+.upcoming-event-link:focus-visible {
+    outline: 3px solid #611f30;
+    outline-offset: 4px;
+}.appointment-text {
+    margin: 0;
+}
+
+.appointment-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 6px;
+}
+
+.weekly-note .appointment-actions .schedule-action {
+    margin-left: 0;
 }
     </style>
 
@@ -430,9 +469,40 @@
                 <p class="weekly-status">The weekly schedule will appear here.</p>
             </div>
 
-            <div class="weekly-note">
-                Confession is available every day (except Sundays) by appointment.
-            </div>
+        <div class="weekly-note">
+    <p class="appointment-text">
+        Confession is available every day (except Sundays) by appointment.
+        For appointments, please
+    </p>
+
+    <div class="appointment-actions">
+        <a class="schedule-action"
+           href="tel:+14377349299"
+           aria-label="Call Parish Priest">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            Call
+        </a>
+
+        <a class="schedule-action"
+           href="https://wa.me/14377349299"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Message Parish Priest on WhatsApp">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            Message
+        </a>
+    </div>
+</div>
+<div class="weekly-note">
+    Help support our children’s faith formation.
+    <a class="schedule-action"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSe_LD_23G0wk4j-3D1x47oOERP57kk75pEhY25PV1bwa5Mnzw/viewform"
+       target="_blank"
+       rel="noopener noreferrer">
+        <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+Donate to Catechism
+    </a>
+</div>
             <section id="upcoming-section" aria-labelledby="upcoming-title" hidden>
     <div class="weekly-banner">
         <h2 id="upcoming-title">Upcoming Events</h2>
@@ -449,6 +519,6 @@
 
     <div id="footer-placeholder"></div>
     <script src="main.js?v=20261003-schedule"></script>
-    <script src="schedule.js?v=20261008-1"></script>
+    <script src="schedule.js?v=20261009-1"></script>
 </body>
 </html>
