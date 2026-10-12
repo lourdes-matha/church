@@ -317,6 +317,41 @@ const weeklyOnly = events.filter(event =>
                     item.append(paragraph);
                 }
 
+                                if (
+                    date.getUTCDay() === 0 &&
+                    /holy qurbana/i.test(event.Event)
+                ) {
+                    const readings = element(
+                        "div", "sunday-readings", ""
+                    );
+
+                    [
+                        ["Daily reading - Malayalam",
+                         "https://www.syromalabarliturgy.org/liturgy_malayalam"],
+                        ["Daily reading - English",
+                         "https://www.syromalabarliturgy.org/liturgy_english"]
+                    ].forEach(([label, url]) => {
+                        const link = element(
+                            "a", "schedule-action", ""
+                        );
+                        link.href = url;
+                        link.target = "_blank";
+                        link.rel = "noopener noreferrer";
+
+                        const icon = document.createElement("i");
+                        icon.className = "fa-solid fa-book-open";
+                        icon.setAttribute("aria-hidden", "true");
+
+                        link.append(
+                            icon,
+                            document.createTextNode(label)
+                        );
+                        readings.append(link);
+                    });
+
+                    item.append(readings);
+                }
+
                 content.append(item);
             });
 
