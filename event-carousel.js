@@ -24,7 +24,10 @@
   function manual(index) { show(index); restart(); }
   function setPaused(value) {
     paused = value;
-    pause.textContent = paused ? 'Play slideshow' : 'Pause slideshow';
+    const label = paused ? 'Play slideshow' : 'Pause slideshow';
+    pause.innerHTML = paused ? '<span aria-hidden="true">▶</span>' : '<span aria-hidden="true">Ⅱ</span>';
+    pause.setAttribute('aria-label', label);
+    pause.setAttribute('title', label);
     live.setAttribute('aria-live', paused ? 'polite' : 'off');
     restart();
   }
