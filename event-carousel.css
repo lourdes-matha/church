@@ -1,0 +1,13 @@
+.event-carousel{width:100%;background:#250910}
+.event-slides{overflow:hidden;touch-action:pan-y}
+.event-slide[hidden]{display:none}
+.event-slide picture,.event-slide img{display:block;width:100%}
+.event-slide img{height:auto;aspect-ratio:1942/809;object-fit:contain}
+.event-carousel-controls{display:flex;justify-content:center;align-items:center;gap:0;padding:0 8px;background:#fff;border-bottom:1px solid #eee4df}
+.event-carousel-controls button{display:inline-flex;align-items:center;justify-content:center;flex:0 0 44px;width:44px;min-width:44px;height:44px;min-height:44px;margin:0;padding:0;border:0;border-radius:0;color:#64212e;background:transparent;cursor:pointer;font:inherit;font-size:17px;box-shadow:none}
+.event-carousel-controls .event-dot{width:8px;height:8px;border-radius:50%;background:#bda9ad;transition:background .15s,transform .15s}
+.event-carousel-controls button[aria-current=true] .event-dot{background:#64212e;transform:scale(1.3)}
+.event-carousel-controls button:hover{background:#faf5f3}
+.event-carousel-controls button:focus-visible{outline:2px solid #64212e;outline-offset:-4px}
+.event-carousel-controls [data-event-pause]{font-size:15px}
+@media(max-width:640px){.event-slide img{aspect-ratio:4/5}}
