@@ -9,8 +9,8 @@
   let current = 0, paused = motion.matches, timer, startX = null;
   function restart() {
     clearInterval(timer);
-    if (!paused && !document.hidden && !carousel.matches(':hover') && !carousel.contains(document.activeElement)) {
-      timer = setInterval(() => show(current + 1), 5000);
+    if (!paused && !document.hidden) {
+      timer = setInterval(() => show(current + 1), 3000);
     }
   }
   function show(index) {
@@ -32,10 +32,6 @@
   carousel.querySelector('[data-event-next]').addEventListener('click', () => manual(current + 1));
   dots.forEach((dot, i) => dot.addEventListener('click', () => manual(i)));
   pause.addEventListener('click', () => setPaused(!paused));
-  carousel.addEventListener('mouseenter', () => clearInterval(timer));
-  carousel.addEventListener('mouseleave', restart);
-  carousel.addEventListener('focusin', () => clearInterval(timer));
-  carousel.addEventListener('focusout', () => setTimeout(restart, 0));
   carousel.addEventListener('keydown', event => {
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
       event.preventDefault(); manual(current + (event.key === 'ArrowLeft' ? -1 : 1));
