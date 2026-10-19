@@ -177,7 +177,13 @@ if (upcomingSection && upcomingContainer) {
             ));
         }
 
-        item.append(element("h3", "", event.Event));
+        const title = element("h3", "", event.Event);
+        if (/\bparish\s+night\b/i.test(event.Event || "")) {
+            const detailsLink = element("a", "upcoming-event-link", event.Event);
+            detailsLink.href = "parish-night-2026.html";
+            title.replaceChildren(detailsLink);
+        }
+        item.append(title);
 
         if (event.Details) {
             item.append(element("p", "", event.Details));

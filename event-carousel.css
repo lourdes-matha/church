@@ -11,3 +11,5 @@
 .event-carousel-controls button:focus-visible{outline:2px solid #64212e;outline-offset:-4px}
 .event-carousel-controls [data-event-pause]{font-size:15px}
 @media(max-width:640px){.event-slide img{aspect-ratio:4/5}}
+
+.event-banner-link{display:block}.event-banner-link:focus-visible{outline:4px solid #f5dba5;outline-offset:-4px}
