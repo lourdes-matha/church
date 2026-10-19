@@ -330,7 +330,7 @@
         padding: 4px 7px;
     }
 }
-/* END: Compact phone layout */  
+/* END: Compact phone layout */
 /* Simplified schedule header */
 .weekly-hero {
     padding: 24px 16px;
@@ -351,7 +351,7 @@
         font-size: 18px;
         margin: 0;
     }
-}  
+}
 /* Reduce the gap before Upcoming Events */
 .weekly-note {
     margin-bottom: 10px;
@@ -367,29 +367,148 @@
         margin-bottom: 8px;
     }
 }
+.upcoming-jump {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    margin-top: 12px;
+    padding: 8px 18px;
+    box-sizing: border-box;
+    background: #fff5d9;
+    color: #611f30;
+    border: 1px solid #d5b46e;
+    border-radius: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.upcoming-jump[hidden] {
+    display: none;
+}
+
+.upcoming-jump:hover {
+    background: #ffe8b0;
+}
+
+.upcoming-jump:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 3px;
+}
+
+#upcoming-section {
+    scroll-margin-top: 110px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}   .schedule-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+    color: #611f30;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.weekly-note .schedule-action {
+    margin-left: 8px;
+}
+
+.upcoming-event-link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.schedule-action:focus-visible,
+.upcoming-event-link:focus-visible {
+    outline: 3px solid #611f30;
+    outline-offset: 4px;
+}.appointment-text {
+    margin: 0;
+}
+
+.appointment-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 6px;
+}
+
+.weekly-note .appointment-actions .schedule-action {
+    margin-left: 0;
+}
+.sunday-readings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+    margin-top: 8px;
+}
     </style>
+
 </head>
 <body>
     <div id="navbar-placeholder"></div>
 
     <main class="weekly-page">
         <article class="weekly-poster" aria-labelledby="schedule-title">
-            <header class="weekly-hero">
-                <h1>Lourdes Matha Syro-Malabar Catholic Church, Windsor</h1>
-            </header>
+
 
             <div class="weekly-banner">
                 <h2 id="schedule-title">Weekly Schedule</h2>
                 <p id="schedule-week">Holy Qurbana · Prayer · Parish Life</p>
+                <a id="upcoming-jump"
+   class="upcoming-jump"
+   href="#upcoming-section"
+   hidden>
+    Upcoming Events ↓
+</a>
             </div>
 
             <div id="weekly-events" class="weekly-events" aria-live="polite">
                 <p class="weekly-status">The weekly schedule will appear here.</p>
             </div>
 
-            <div class="weekly-note">
-                Confession is available every day (except Sundays) by appointment.
-            </div>
+        <div class="weekly-note">
+    <p class="appointment-text">
+        Confession is available every day (except Sundays) by appointment.
+        For appointments, please
+    </p>
+
+    <div class="appointment-actions">
+        <a class="schedule-action"
+           href="tel:+14377349299"
+           aria-label="Call Parish Priest">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            Call
+        </a>
+
+        <a class="schedule-action"
+           href="https://wa.me/14377349299"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Message Parish Priest on WhatsApp">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            Message
+        </a>
+    </div>
+</div>
+<div class="weekly-note">
+    Help support our children’s faith formation.
+    <a class="schedule-action"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSe_LD_23G0wk4j-3D1x47oOERP57kk75pEhY25PV1bwa5Mnzw/viewform"
+       target="_blank"
+       rel="noopener noreferrer">
+        <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+Donate to Catechism
+    </a>
+</div>
             <section id="upcoming-section" aria-labelledby="upcoming-title" hidden>
     <div class="weekly-banner">
         <h2 id="upcoming-title">Upcoming Events</h2>

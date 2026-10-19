@@ -153,6 +153,11 @@ const upcomingContainer = document.getElementById("upcoming-events");
 if (upcomingSection && upcomingContainer) {
     upcomingContainer.replaceChildren();
     upcomingSection.hidden = upcomingEvents.length === 0;
+    const upcomingJump = document.getElementById("upcoming-jump");
+
+if (upcomingJump) {
+    upcomingJump.hidden = upcomingEvents.length === 0;
+}
 
     upcomingEvents.forEach(event => {
         const card = element("div", "weekly-day", "");
@@ -178,12 +183,39 @@ if (upcomingSection && upcomingContainer) {
         }
 
         const title = element("h3", "", event.Event);
-        if (/\bparish\s+night\b/i.test(event.Event || "")) {
-            const detailsLink = element("a", "upcoming-event-link", event.Event);
-            detailsLink.href = "parish-night-2026.html";
-            title.replaceChildren(detailsLink);
+let eventUrl = null;
+
+if (event.Link) {
+    try {
+        const candidate = new URL(event.Link, window.location.href);
+
+        if (["https:", "http:"].includes(candidate.protocol)) {
+            eventUrl = candidate.href;
         }
-        item.append(title);
+    } catch {
+        // Invalid links leave the event non-clickable.
+    }
+}
+
+const isParishNight = /\bparish\s+night\b/i.test(event.Event || "");
+if (isParishNight) {
+    eventUrl = new URL("parish-night-2026.html", window.location.href).href;
+}
+
+if (eventUrl) {
+    const titleLink = element(
+    "a", "upcoming-event-link", `${event.Event} ↗`
+);
+    titleLink.href = eventUrl;
+    if (!isParishNight) {
+        titleLink.target = "_blank";
+        titleLink.rel = "noopener noreferrer";
+    }
+    title.replaceChildren(titleLink);
+}
+
+item.append(title);
+
 
         if (event.Details) {
             item.append(element("p", "", event.Details));
@@ -290,6 +322,41 @@ const weeklyOnly = events.filter(event =>
                         `Responsibility: ${event.Responsibility}`
                     ));
                     item.append(paragraph);
+                }
+
+                                if (
+                    date.getUTCDay() === 0 &&
+                    /holy qurbana/i.test(event.Event)
+                ) {
+                    const readings = element(
+                        "div", "sunday-readings", ""
+                    );
+
+                    [
+                        ["Daily reading - Malayalam",
+                         "https://www.syromalabarliturgy.org/liturgy_malayalam"],
+                        ["Daily reading - English",
+                         "https://www.syromalabarliturgy.org/liturgy_english"]
+                    ].forEach(([label, url]) => {
+                        const link = element(
+                            "a", "schedule-action", ""
+                        );
+                        link.href = url;
+                        link.target = "_blank";
+                        link.rel = "noopener noreferrer";
+
+                        const icon = document.createElement("i");
+                        icon.className = "fa-solid fa-book-open";
+                        icon.setAttribute("aria-hidden", "true");
+
+                        link.append(
+                            icon,
+                            document.createTextNode(label)
+                        );
+                        readings.append(link);
+                    });
+
+                    item.append(readings);
                 }
 
                 content.append(item);
