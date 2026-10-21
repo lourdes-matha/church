@@ -21,7 +21,25 @@
 @keyframes hero-progress{from{width:0}to{width:100%}}
 @media(max-width:900px){.hero-scroll{display:none}.hero-carousel .event-carousel-controls{gap:15px;padding-inline:20px}.progress-label{font-size:9px}}
 @media(max-width:640px){.welcome-inner{width:calc(100% - 40px);padding:16px 0}.slide-eyebrow{font-size:9px;letter-spacing:.1em;margin-bottom:12px}.slide-copy h1{font-size:clamp(26px,7.6vw,40px);margin-bottom:15px}.slide-description{font-size:13px;line-height:1.55}.slide-actions{margin-top:18px;gap:8px}.slide-button{font-size:11px;padding:0 13px;gap:13px;min-height:44px}.slide-address{font-size:10px;margin-top:14px}.hero-shade{background:linear-gradient(90deg,#031728bc,#051e3160)}.hero-carousel .event-carousel-controls{flex-basis:54px;min-height:54px;padding:0 12px;gap:12px}.hero-progress{gap:8px}.progress-label{display:none}.progress-track{margin:0}.hero-controls{gap:0}.hero-controls button{width:36px;height:44px}}
-@media(max-height:600px){.slide-eyebrow,.slide-description,.slide-address{display:none}.slide-copy h1{font-size:clamp(24px,5vh,36px);margin-bottom:12px}.slide-actions{margin-top:12px}.welcome-inner{padding:10px 0}}
+/* Keep every welcome detail visible; adapt type and spacing to the actual slide height. */
+@media(min-width:641px){
+.hero-carousel .event-slides{container-type:size}
+.welcome-inner{padding:8px 0}
+.slide-copy{max-width:930px}
+.slide-eyebrow{margin-bottom:8px}
+.slide-copy h1{font-size:clamp(34px,13cqh,72px);line-height:1.1;max-width:930px;margin-bottom:12px}
+.slide-description{display:block;font-size:clamp(15px,4.2cqh,20.8px);line-height:1.45;max-width:760px}
+.slide-actions{margin-top:16px}
+.slide-address{display:block;font-size:13px;margin-top:12px}
+}
+@media(max-width:640px) and (max-height:600px){
+.slide-eyebrow{margin-bottom:8px}
+.slide-copy h1{font-size:24px;margin-bottom:10px}
+.slide-description{font-size:12px;line-height:1.4}
+.slide-actions{margin-top:10px}
+.slide-address{font-size:10px;margin-top:10px}
+.welcome-inner{padding:8px 0}
+}
 @media(prefers-reduced-motion:reduce){.progress-track>span{animation:none!important}}
 
 /* Keep the controls inside the visible viewport on every screen size. */
