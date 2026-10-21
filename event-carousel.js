@@ -6,12 +6,18 @@
   const pause = carousel.querySelector('[data-event-pause]');
   const live = carousel.querySelector('.event-slides');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  let current = 0, paused = motion.matches, timer, startX = null;
+  let current = 0, paused = motion.matches, hovering = false, focused = false, timer, startX = null;
+  function stopped() { return paused || hovering || focused || document.hidden; }
   function restart() {
     clearInterval(timer);
-    if (!paused && !document.hidden) {
-      timer = setInterval(() => show(current + 1), 5000);
+    carousel.classList.toggle('is-paused', stopped());
+    const track = dots[current].querySelector('.progress-track > span');
+    if (track && !stopped()) {
+      track.style.animation = 'none';
+      void track.offsetWidth;
+      track.style.animation = '';
     }
+    if (!stopped()) timer = setInterval(() => show(current + 1), 5000);
   }
   function show(index) {
     current = (index + slides.length) % slides.length;
@@ -20,8 +26,8 @@
       if (i === current) dot.setAttribute('aria-current', 'true');
       else dot.removeAttribute('aria-current');
     });
+    restart();
   }
-  function manual(index) { show(index); restart(); }
   function setPaused(value) {
     paused = value;
     const label = paused ? 'Play slideshow' : 'Pause slideshow';
@@ -31,23 +37,39 @@
     live.setAttribute('aria-live', paused ? 'polite' : 'off');
     restart();
   }
-  carousel.querySelector('[data-event-prev]').addEventListener('click', () => manual(current - 1));
-  carousel.querySelector('[data-event-next]').addEventListener('click', () => manual(current + 1));
-  dots.forEach((dot, i) => dot.addEventListener('click', () => manual(i)));
+  carousel.querySelector('[data-event-prev]').addEventListener('click', () => show(current - 1));
+  carousel.querySelector('[data-event-next]').addEventListener('click', () => show(current + 1));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
   pause.addEventListener('click', () => setPaused(!paused));
   carousel.addEventListener('keydown', event => {
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-      event.preventDefault(); manual(current + (event.key === 'ArrowLeft' ? -1 : 1));
+      event.preventDefault(); show(current + (event.key === 'ArrowLeft' ? -1 : 1));
     }
   });
+  carousel.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') { hovering = true; restart(); } });
+  carousel.addEventListener('pointerleave', () => { hovering = false; restart(); });
+  carousel.addEventListener('focusin', () => { focused = true; restart(); });
+  carousel.addEventListener('focusout', event => { focused = carousel.contains(event.relatedTarget); restart(); });
   live.addEventListener('touchstart', event => { startX = event.touches[0].clientX; }, {passive:true});
   live.addEventListener('touchend', event => {
     if (startX === null) return;
     const distance = event.changedTouches[0].clientX - startX;
-    if (Math.abs(distance) > 50) manual(current + (distance < 0 ? 1 : -1));
+    if (Math.abs(distance) > 50) show(current + (distance < 0 ? 1 : -1));
     startX = null;
   }, {passive:true});
   document.addEventListener('visibilitychange', restart);
   motion.addEventListener('change', event => setPaused(event.matches));
+  const updateHeight = () => {
+    const nav = document.querySelector('#navbar-placeholder');
+    const announcement = document.querySelector('.announcement-bar');
+    const height = (nav ? nav.getBoundingClientRect().height : 0) + (announcement ? announcement.getBoundingClientRect().height : 0);
+    carousel.style.setProperty('--hero-header-height', `${Math.round(height)}px`);
+  };
+  const observer = new ResizeObserver(updateHeight);
+  ['#navbar-placeholder', '.announcement-bar'].forEach(selector => {
+    const element = document.querySelector(selector);
+    if (element) observer.observe(element);
+  });
+  updateHeight();
   setPaused(paused);
 })();
