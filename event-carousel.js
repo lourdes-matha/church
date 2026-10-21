@@ -60,7 +60,7 @@
     };
     const header = heightOf('#navbar-placeholder') + heightOf('.announcement-bar');
     const social = document.querySelector('.home-social-rail');
-    const fixedBottom = social && getComputedStyle(social).position === 'fixed' && getComputedStyle(social).bottom !== 'auto';
+    const fixedBottom = social && window.matchMedia('(max-width: 620px)').matches && getComputedStyle(social).position === 'fixed';
     carousel.style.setProperty('--hero-header-height', `${Math.ceil(header)}px`);
     carousel.style.setProperty('--hero-social-height', `${fixedBottom ? Math.ceil(social.getBoundingClientRect().height) : 0}px`);
     carousel.style.setProperty('--hero-viewport-height', `${Math.floor(window.visualViewport ? window.visualViewport.height : window.innerHeight)}px`);
