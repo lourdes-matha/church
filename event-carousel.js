@@ -10,7 +10,7 @@
   function restart() {
     clearInterval(timer);
     if (!paused && !document.hidden) {
-      timer = setInterval(() => show(current + 1), 3000);
+      timer = setInterval(() => show(current + 1), 5000);
     }
   }
   function show(index) {
