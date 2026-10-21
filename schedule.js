@@ -199,7 +199,7 @@ if (event.Link) {
 
 const isParishNight = /\bparish\s+night\b/i.test(event.Event || "");
 if (isParishNight) {
-    eventUrl = new URL("parish-night-2026.html", window.location.href).href;
+    eventUrl = new URL("images/events/parish-night-2026.webp", window.location.href).href;
 }
 
 if (eventUrl) {
@@ -207,10 +207,8 @@ if (eventUrl) {
     "a", "upcoming-event-link", `${event.Event} ↗`
 );
     titleLink.href = eventUrl;
-    if (!isParishNight) {
-        titleLink.target = "_blank";
-        titleLink.rel = "noopener noreferrer";
-    }
+    titleLink.target = "_blank";
+    titleLink.rel = "noopener noreferrer";
     title.replaceChildren(titleLink);
 }
 
