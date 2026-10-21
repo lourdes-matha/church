@@ -24,5 +24,5 @@
 @media(max-height:600px){.slide-eyebrow,.slide-description,.slide-address{display:none}.slide-copy h1{font-size:clamp(24px,5vh,36px);margin-bottom:12px}.slide-actions{margin-top:12px}.welcome-inner{padding:10px 0}}
 @media(prefers-reduced-motion:reduce){.progress-track>span{animation:none!important}}
 
-/* Laptop/desktop: allow the complete landscape poster to span the viewport width. */
-@media(min-width:641px){.home-page .hero-carousel{min-height:calc(41.658vw + 62px)}}
+/* Keep the controls inside the visible viewport on every screen size. */
+.home-page .hero-carousel{min-height:0;max-height:calc(var(--hero-viewport-height,100svh) - var(--hero-header-height) - var(--hero-social-height))}
