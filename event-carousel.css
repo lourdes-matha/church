@@ -1,15 +1,49 @@
-.event-carousel{width:100%;background:#250910}
-.event-slides{overflow:hidden;touch-action:pan-y}
-.event-slide[hidden]{display:none}
-.event-slide picture,.event-slide img{display:block;width:100%}
-.event-slide img{height:auto;aspect-ratio:1942/809;object-fit:contain}
-.event-carousel-controls{display:flex;justify-content:center;align-items:center;gap:0;padding:0 8px;background:#fff;border-bottom:1px solid #eee4df}
-.event-carousel-controls button{display:inline-flex;align-items:center;justify-content:center;flex:0 0 44px;width:44px;min-width:44px;height:44px;min-height:44px;margin:0;padding:0;border:0;border-radius:0;color:#64212e;background:transparent;cursor:pointer;font:inherit;font-size:17px;box-shadow:none}
-.event-carousel-controls .event-dot{width:8px;height:8px;border-radius:50%;background:#bda9ad;transition:background .15s,transform .15s}
-.event-carousel-controls button[aria-current=true] .event-dot{background:#64212e;transform:scale(1.3)}
-.event-carousel-controls button:hover{background:#faf5f3}
-.event-carousel-controls button:focus-visible{outline:2px solid #64212e;outline-offset:-4px}
-.event-carousel-controls [data-event-pause]{font-size:15px}
-@media(max-width:640px){.event-slide img{aspect-ratio:4/5}}
+/* Override the site's generic section padding: the slideshow reaches both edges. */
+.home-page .hero-carousel{--hero-header-height:120px;--hero-social-height:0px;position:relative;isolation:isolate;width:100%;max-width:none;margin:0;padding:0;height:calc(100svh - var(--hero-header-height) - var(--hero-social-height));height:calc(var(--hero-viewport-height,100svh) - var(--hero-header-height) - var(--hero-social-height));min-height:0;display:flex;flex-direction:column;overflow:hidden;background:#0b2539;color:#fff}
+.hero-carousel .event-slides{position:relative;flex:1;min-height:0;width:100%;overflow:hidden;touch-action:pan-y}
+.hero-carousel .event-slide{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;overflow:hidden}
+.hero-carousel .event-slide[hidden]{display:none!important}
+/* Show the entire original poster, without overlays, fading, frames or extra copy. */
+.poster-link{display:block;width:100%;height:100%}.poster-slide picture{display:block;width:100%;height:100%}.poster-slide img{display:block;width:100%;height:100%;max-width:none;object-fit:contain;object-position:center;opacity:1;filter:none;border:0;border-radius:0}
+.poster-holyween{background:#fff9e8}.poster-trunk-or-treat{background:#fff8e7}.poster-parish-night{background:#28172d}.poster-christmas-carol{background:#44121b}
+.hero-welcome{display:flex;align-items:center;background:url('images/hero.png') center 55%/cover no-repeat}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,#031728c7,#051e3166 60%,#051e3120)}
+.welcome-inner{position:relative;z-index:1;width:min(1180px,calc(100% - 80px));margin:auto;padding:24px 0}
+.slide-copy{max-width:760px}.slide-eyebrow{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0 0 20px;color:#f1cf91}
+.slide-copy h1{font-family:'Merriweather',Georgia,serif;font-size:clamp(32px,4.4vw,64px);line-height:1.16;letter-spacing:-.035em;margin:0 0 22px;text-wrap:balance;color:#fff;text-shadow:0 2px 14px #0006}
+.slide-description{font-size:clamp(14px,1.4vw,18px);line-height:1.65;max-width:640px;margin:0;color:#fff}.slide-actions{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 0}
+.slide-button{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;min-height:48px;padding:0 24px;border:1px solid #e5bc70;font-size:13px;font-weight:700;text-decoration:none;border-radius:2px}.slide-button.primary{background:#e5bc70;color:#132c3b}.slide-button.secondary{color:#fff;background:#051a2a55;border-color:#ffffffb0}.slide-address{font-size:12px;line-height:1.5;margin:20px 0 0;color:#fff}
+.hero-carousel .event-carousel-controls{position:relative;flex:0 0 62px;min-height:62px;display:flex;align-items:center;gap:24px;width:100%;padding:0 32px;background:#0b2539;color:#fff;box-sizing:border-box;z-index:2}
+.hero-progress{display:flex;gap:14px;flex:1;max-width:740px;min-width:0}.hero-progress button{border:0;background:none;color:#fff;padding:8px 0;cursor:pointer;flex:1;min-width:0;text-align:left;min-height:44px;font:inherit}
+.progress-track{height:3px;display:block;background:#ffffff50;position:relative;margin-bottom:6px;overflow:hidden}.progress-track>span{display:block;height:100%;width:0;background:#e5bc70}.hero-progress button[aria-current=true] .progress-track>span{width:100%;animation:hero-progress 5s linear}.hero-carousel.is-paused .progress-track>span{animation-play-state:paused}
+.progress-label{display:block;font-size:10px;opacity:.7;white-space:nowrap}.hero-progress button[aria-current=true] .progress-label{opacity:1;color:#f0cf91}.hero-controls{display:flex;margin-left:auto;gap:2px}.hero-controls button{display:grid;place-items:center;width:44px;height:44px;border:0;background:transparent;color:#fff;cursor:pointer;font-size:14px}.hero-scroll{color:#fff;text-decoration:none;font-size:10px;white-space:nowrap;display:flex;gap:14px;align-items:center}.hero-scroll span{font-size:22px}
+.hero-carousel a:focus-visible,.hero-carousel button:focus-visible{outline:2px solid #fff;outline-offset:2px}.hero-controls button:hover{background:#ffffff15}
+@keyframes hero-progress{from{width:0}to{width:100%}}
+@media(max-width:900px){.hero-scroll{display:none}.hero-carousel .event-carousel-controls{gap:15px;padding-inline:20px}.progress-label{font-size:9px}}
+@media(max-width:640px){.welcome-inner{width:calc(100% - 40px);padding:16px 0}.slide-eyebrow{font-size:9px;letter-spacing:.1em;margin-bottom:12px}.slide-copy h1{font-size:clamp(26px,7.6vw,40px);margin-bottom:15px}.slide-description{font-size:13px;line-height:1.55}.slide-actions{margin-top:18px;gap:8px}.slide-button{font-size:11px;padding:0 13px;gap:13px;min-height:44px}.slide-address{font-size:10px;margin-top:14px}.hero-shade{background:linear-gradient(90deg,#031728bc,#051e3160)}.hero-carousel .event-carousel-controls{flex-basis:54px;min-height:54px;padding:0 12px;gap:12px}.hero-progress{gap:8px}.progress-label{display:none}.progress-track{margin:0}.hero-controls{gap:0}.hero-controls button{width:36px;height:44px}}
+/* Keep every welcome detail visible; adapt type and spacing to the actual slide height. */
+@media(min-width:641px){
+.hero-carousel .event-slides{container-type:size}
+.welcome-inner{padding:8px 0}
+.slide-copy{max-width:930px}
+.slide-eyebrow{margin-bottom:8px}
+.slide-copy h1{font-size:clamp(34px,13cqh,72px);line-height:1.1;max-width:930px;margin-bottom:12px}
+.slide-description{display:block;font-size:clamp(15px,4.2cqh,20.8px);line-height:1.45;max-width:760px}
+.slide-actions{margin-top:16px}
+.slide-address{display:block;font-size:13px;margin-top:12px}
+}
+@media(max-width:640px) and (max-height:600px){
+.slide-eyebrow{margin-bottom:8px}
+.slide-copy h1{font-size:24px;margin-bottom:10px}
+.slide-description{font-size:12px;line-height:1.4}
+.slide-actions{margin-top:10px}
+.slide-address{font-size:10px;margin-top:10px}
+.welcome-inner{padding:8px 0}
+}
+@media(prefers-reduced-motion:reduce){.progress-track>span{animation:none!important}}
 
-.event-banner-link{display:block}.event-banner-link:focus-visible{outline:4px solid #f5dba5;outline-offset:-4px}
+/* Keep the controls inside the visible viewport on every screen size. */
+.home-page .hero-carousel{min-height:0;max-height:calc(var(--hero-viewport-height,100svh) - var(--hero-header-height) - var(--hero-social-height))}
+
+/* Only the Parish Night slide has this event-page action. */
+.parish-know-more{position:absolute;right:20px;bottom:14px;z-index:2;display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:44px;padding:0 20px;border:1px solid #e5bc70;border-radius:3px;background:#e5bc70;color:#132c3b;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 2px 12px #0005}.parish-know-more:hover{background:#f1cf91}@media(max-width:640px){.parish-know-more{right:12px;bottom:10px;padding-inline:16px;font-size:12px}}
