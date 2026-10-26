@@ -7,7 +7,7 @@ on:
       target_branch:
         description: Branch to update
         type: choice
-        default: website-next-development
+        default: main
         options:
           - website-next-development
           - main
