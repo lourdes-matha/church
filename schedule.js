@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    const sheetUrl =
-        "https://docs.google.com/spreadsheets/d/e/2PACX-1vSbJkXx468_CZPB3G46WklY1cc_lmT2dyzqItejHDyiywc5k8DeJDIbmtBCHWk9C4x1jru6Nys2Dy2V/pub?gid=0&single=true&output=csv";
-
+    const snapshotUrl = 'schedule-data.json';
+    const storageKey = 'lourdes-matha-schedule-v1';
     const container = document.getElementById("weekly-events");
     const heading = document.getElementById("schedule-week");
     if (!container || !heading) return;
@@ -104,18 +103,29 @@ document.addEventListener("DOMContentLoaded", async () => {
         return node;
     }
 
-    try {
-        const response = await fetch(sheetUrl, { cache: "no-store" });
-        if (!response.ok) throw new Error("Sheet could not be loaded.");
-
-        const rows = parseCSV(await response.text());
-        const headers = rows.shift()?.map(value => value.trim()) || [];
-        const required = ["Date", "Time", "Event", "Details", "Responsibility"];
-
-        if (!required.every(name => headers.includes(name))) {
-            throw new Error("The sheet headings do not match.");
+    const status = document.getElementById('schedule-updated');
+    function validateSnapshot(payload) {
+        if (payload?.schema_version !== 1 || !Array.isArray(payload.records) ||
+            payload.records.length === 0 || !Number.isFinite(Date.parse(payload.updated_at))) {
+            throw new Error('Invalid schedule snapshot');
         }
-
+        const columns = ['Date', 'Time', 'Event', 'Details', 'Responsibility', 'Category', 'Link'];
+        if (!payload.records.every(record => columns.every(key => typeof record[key] === 'string') &&
+            parseDate(record.Date) && record.Event && /^(weekly|upcoming)$/i.test(record.Category))) {
+            throw new Error('Invalid schedule rows');
+        }
+        return payload;
+    }
+    function updateStatus(payload, suffix = '') {
+        if (!status) return;
+        const stamp = new Intl.DateTimeFormat('en-CA', {
+            timeZone: 'America/Toronto', dateStyle: 'medium', timeStyle: 'short'
+        }).format(new Date(payload.updated_at));
+        status.textContent = `Schedule updated: ${stamp} (Windsor time).${suffix}`;
+    }
+    function renderSchedule(payload) {
+        const headers = Object.keys(payload.records[0]);
+        const rows = payload.records.map(record => headers.map(key => record[key]));
         const events = rows.map(row => {
             const record = {};
             headers.forEach((name, index) => {
@@ -365,9 +375,34 @@ const weeklyOnly = events.filter(event =>
             day.append(panel, content);
             container.append(day);
         });
+    }
+
+    let displayed = null;
+    try {
+        const saved = localStorage.getItem(storageKey);
+        if (saved) {
+            displayed = validateSnapshot(JSON.parse(saved));
+            renderSchedule(displayed);
+            updateStatus(displayed, ' Checking for updates…');
+        }
+    } catch {
+        displayed = null;
+    }
+    try {
+        const response = await fetch(snapshotUrl, { cache: 'no-store' });
+        if (!response.ok) throw new Error('Schedule snapshot could not be loaded');
+        const payload = validateSnapshot(await response.json());
+        renderSchedule(payload);
+        displayed = payload;
+        updateStatus(payload);
+        try { localStorage.setItem(storageKey, JSON.stringify(payload)); } catch { /* Storage may be disabled. */ }
     } catch (error) {
-        console.error("Weekly schedule:", error);
-        container.textContent =
-            "The schedule could not be loaded. Please refresh the page in a moment.";
+        console.error('Weekly schedule:', error);
+        if (displayed) {
+            updateStatus(displayed, ' Showing a saved copy; updates are temporarily unavailable.');
+        } else {
+            container.textContent = 'The schedule could not be loaded. Please refresh the page in a moment.';
+            if (status) status.textContent = 'Schedule temporarily unavailable.';
+        }
     }
 });

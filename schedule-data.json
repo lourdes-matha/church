@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-26T12:48:17+00:00",
+  "records": [
+    {
+      "Date": "2026-10-06",
+      "Time": "18:30",
+      "Event": "Confession, Adoration & Rosary",
+      "Details": "Rosary led by Ward 1 (Holy Family Unit)",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-10-06",
+      "Time": "19:00",
+      "Event": "Holy Qurbana",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-10-08",
+      "Time": "18:30",
+      "Event": "Confession, Adoration & Rosary",
+      "Details": "Rosary led by Ward 2 (Little Flower Unit)",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-10-08",
+      "Time": "19:00",
+      "Event": "Holy Qurbana",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-10-11",
+      "Time": "12:30",
+      "Event": "Holy Qurbana",
+      "Details": "No Catechism this Sunday",
+      "Responsibility": "Ward 5 (St.Joseph Unit)",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-01",
+      "Time": "",
+      "Event": "Holyween",
+      "Details": "Dear children, get ready with Saint's costumes. Sweet treats for all children who dress up as saints.",
+      "Responsibility": "",
+      "Category": "Upcoming",
+      "Link": "images/holyween-2026.png"
+    },
+    {
+      "Date": "2026-11-01",
+      "Time": "",
+      "Event": "Trunk or Treat",
+      "Details": "Parishioners, decorate your car trunk with saints theme and bring candy to distribute to children",
+      "Responsibility": "",
+      "Category": "Upcoming",
+      "Link": "images/events/trunk-or-treat-mobile.webp"
+    },
+    {
+      "Date": "2026-11-28",
+      "Time": "",
+      "Event": "Parish Night",
+      "Details": "Start planning your songs, dances, and performances for an unforgettable Parish Night! Each ward to come with programs",
+      "Responsibility": "",
+      "Category": "Upcoming",
+      "Link": "images/events/parish-night-2026.webp"
+    },
+    {
+      "Date": "2026-10-20",
+      "Time": "18:30",
+      "Event": "Confession, Adoration & Rosary",
+      "Details": "Rosary led by Ward 5 (St.Joseph Unit)",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-10-20",
+      "Time": "19:00",
+      "Event": "Holy Qurbana",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-10-22",
+      "Time": "18:30",
+      "Event": "Confession, Adoration & Rosary",
+      "Details": "Rosary led by Ward 6 (Infant Jesus Unit)",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-10-22",
+      "Time": "19:00",
+      "Event": "Holy Qurbana",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-10-25",
+      "Time": "12:30",
+      "Event": "Holy Qurbana",
+      "Details": "Catechism after Holy Qurbana",
+      "Responsibility": "Ward 7 (St.Alphonsa Unit)",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-10-27",
+      "Time": "18:30",
+      "Event": "Confession, Adoration & Rosary",
+      "Details": "Rosary led by Ward 7 (St Alphonsa Unit)",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-10-27",
+      "Time": "19:00",
+      "Event": "Holy Qurbana",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-10-29",
+      "Time": "18:30",
+      "Event": "Confession, Adoration & Rosary",
+      "Details": "Rosary led by Ward 8 (St Thomas Unit)",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-10-29",
+      "Time": "19:00",
+      "Event": "Holy Qurbana",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-01",
+      "Time": "12:30",
+      "Event": "Holy Qurbana",
+      "Details": "Holyween, Catechism, Trunk or Treat",
+      "Responsibility": "Ward 8 (St.Thomas Unit)",
+      "Category": "Weekly",
+      "Link": ""
+    }
+  ]
+}
