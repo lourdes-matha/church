@@ -13,28 +13,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catechism | Lourdes Matha</title>
-    <meta name="description" content="Catechism information for Lourdes Matha Parish in Windsor.">
+    <meta name="description" content="Sunday catechism at Lourdes Matha in Windsor: more than 140 students and around 30 teachers growing together in Catholic faith and Syro-Malabar tradition.">
     <link rel="stylesheet" href="style.css?v=20260917-resources">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        .catechism-page { max-width: 1100px; margin: auto; }
+        .catechism-page .section-heading { margin-bottom: 1.6rem; }
+        .catechism-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-bottom: 1.8rem; }
+        .catechism-fact { padding: 1.25rem; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
+        .catechism-fact h2 { font-size: 1rem; margin-bottom: .6rem; }
+        .catechism-fact p { margin: 0; }
+        .catechism-fact strong { color: var(--navy, #0b2d4f); }
+        .catechism-fact small { display: block; margin-top: .4rem; line-height: 1.6; }
+        .catechism-intro { max-width: 850px; margin: 0 auto 2rem; text-align: center; }
+        .catechism-content { max-width: 850px; margin: auto; }
+        .catechism-content section { padding: 1.5rem 0; border-top: 1px solid var(--line); }
+        .catechism-content h2 { font-size: clamp(1.25rem, 2.5vw, 1.65rem); margin-bottom: .9rem; }
+        .catechism-content p { margin-bottom: .85rem; }
+        .catechism-content p:last-child { margin-bottom: 0; }
+        .catechism-content ul { padding-left: 1.3rem; }
+        .catechism-content li { margin-bottom: .8rem; line-height: 1.8; }
+        @media (max-width: 760px) {
+            .catechism-facts { grid-template-columns: 1fr; gap: .7rem; }
+            .catechism-fact { padding: 1rem 1.15rem; }
+            .catechism-intro { text-align: left; }
+        }
+    </style>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <div id="navbar-placeholder"></div>
 <main id="main-content">
     <section class="service-section" aria-labelledby="catechism-title">
-        <div class="section-heading">
-            <p class="eyebrow">Faith formation</p>
-            <h1 id="catechism-title">Catechism</h1>
-            <p>Helping our children grow in Catholic faith and our Syro-Malabar tradition.</p>
-        </div>
-        <div class="giving-grid">
-            <article class="giving-card">
-                <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-book-open"></i></div>
-                <p class="card-kicker">School year</p><h2>Sunday Catechism</h2>
-                <p id="time-catechism"><strong>Sunday: 1:45 PM</strong></p>
-                <p>Catechism follows the Sunday Holy Qurbana during the school year.</p>
-            </article>
+        <div class="catechism-page">
+            <div class="section-heading">
+                <p class="eyebrow">Faith formation</p>
+                <h1 id="catechism-title">Catechism</h1>
+                <p>Growing in faith, together</p>
+            </div>
+            <div class="catechism-facts" aria-label="Catechism at a glance">
+                <article class="catechism-fact">
+                    <h2>Sunday classes</h2>
+                    <p><strong id="time-catechism">Sunday: 1:45 PM</strong></p>
+                    <small>Following the 12:30 PM Holy Qurbana, during the school year.</small>
+                </article>
+                <article class="catechism-fact">
+                    <h2>Our school</h2>
+                    <p><strong>More than 140 students</strong></p>
+                    <small>Supported by around 30 teachers.</small>
+                </article>
+                <article class="catechism-fact">
+                    <h2>Our parish</h2>
+                    <p><strong>Lourdes Matha</strong></p>
+                    <small>Syro-Malabar Catholic Church, Windsor</small>
+                </article>
+            </div>
+            <p class="catechism-intro">Our catechism school helps children know Jesus, understand their Catholic faith and grow in the spiritual traditions of the Syro-Malabar Church. In partnership with families, we encourage them to build a lasting relationship with God and live their faith with love and confidence.</p>
+            <div class="catechism-content">
+                <section aria-labelledby="catechism-learning">
+                    <h2 id="catechism-learning">Learning and living our faith</h2>
+                    <p>Catechism gives children a welcoming place to learn, ask questions and discover how faith connects with everyday life. Our focus includes:</p>
+                    <ul>
+                        <li><strong>Scripture and Catholic teaching:</strong> Understanding God’s Word, the teachings of the Church and the example of the saints.</li>
+                        <li><strong>Holy Qurbana and the sacraments:</strong> Helping children participate with understanding, reverence and devotion.</li>
+                        <li><strong>Prayer:</strong> Learning the prayers of the Church and developing a personal habit of speaking with God.</li>
+                        <li><strong>Christian living:</strong> Practising kindness, honesty, forgiveness and service at home, at school and in the community.</li>
+                    </ul>
+                </section>
+                <section aria-labelledby="catechism-heritage">
+                    <h2 id="catechism-heritage">Rooted in our Syro-Malabar heritage</h2>
+                    <p>We help children appreciate the faith passed down through generations—our Holy Qurbana, liturgical traditions and spiritual heritage. As they grow up in Canada, we want them to feel connected to their Church and understand the place of these traditions in their lives.</p>
+                </section>
+                <section aria-labelledby="catechism-families">
+                    <h2 id="catechism-families">Teachers and families working together</h2>
+                    <p>Around 30 teachers share their time, faith and care with our students. Through teaching, listening and encouragement, they help children feel supported in their journey with Christ.</p>
+                    <p>Parents and guardians are essential partners. Family prayer, participation in Holy Qurbana, regular class attendance and conversations about what children are learning all strengthen the foundations of faith.</p>
+                </section>
+                <section aria-labelledby="catechism-belong">
+                    <h2 id="catechism-belong">A place to belong</h2>
+                    <p>With more than 140 students, our catechism school is a vibrant part of Lourdes Matha’s parish family. Alongside learning, children build friendships and discover opportunities to participate and serve.</p>
+                    <p>We want every child to know that they are loved by God, valued by their parish and welcomed as an important part of our community.</p>
+                </section>
+            </div>
         </div>
     </section>
 </main>
