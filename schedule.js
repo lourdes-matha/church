@@ -123,6 +123,17 @@ document.addEventListener("DOMContentLoaded", async () => {
         }).format(new Date(payload.updated_at));
         status.textContent = `Schedule updated: ${stamp} (Windsor time).${suffix}`;
     }
+    // Service change takes effect on Monday, November 2, 2026.
+    function applyPrayerServiceChange(record) {
+        if (record.Date < '2026-11-02') return record;
+        const prayer = /\b(?:adoration|rosary)\b/i;
+        const parts = record.Event.split(/\s*(?:,|&|\/|\+|\band\b)\s*/i);
+        const event = parts.filter(part => !prayer.test(part)).join(', ').trim();
+        const details = (record.Details || '').split(/\n|;|\s+·\s+|\.\s+/)
+            .filter(part => !prayer.test(part)).join(' · ').trim();
+        return { ...record, Event: event, Details: details };
+    }
+
     function renderSchedule(payload) {
         const headers = Object.keys(payload.records[0]);
         const rows = payload.records.map(record => headers.map(key => record[key]));
@@ -133,7 +144,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
             record.date = parseDate(record.Date || "");
             return record;
-        }).filter(record => record.date && record.Event)
+        }).map(applyPrayerServiceChange).filter(record => record.date && record.Event)
           .sort((a, b) => a.Date.localeCompare(b.Date));
 
         // Use Windsor's date, regardless of the visitor's timezone.
