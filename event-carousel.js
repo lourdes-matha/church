@@ -16,7 +16,7 @@
       void track.offsetWidth;
       track.style.animation = '';
     }
-    if (!stopped()) timer = setInterval(() => show(current + 1), 5000);
+    if (!stopped()) timer = setInterval(() => show(current + 1), 3000);
   }
   function show(index) {
     current = (index + slides.length) % slides.length;
