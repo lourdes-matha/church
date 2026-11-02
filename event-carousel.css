@@ -47,3 +47,32 @@
 
 /* Only the Parish Night slide has this event-page action. */
 .parish-know-more{position:absolute;right:20px;bottom:14px;z-index:2;display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:44px;padding:0 20px;border:1px solid #e5bc70;border-radius:3px;background:#e5bc70;color:#132c3b;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 2px 12px #0005}.parish-know-more:hover{background:#f1cf91}@media(max-width:640px){.parish-know-more{right:12px;bottom:10px;padding-inline:16px;font-size:12px}}
+
+/* Keep the entire parish group visible, without text covering faces. */
+.hero-welcome{background:#0b2539;display:grid;grid-template-columns:minmax(0, .8fr) minmax(0,1.2fr);align-items:center}
+.hero-welcome .hero-shade{display:none}
+.welcome-community-photo{display:block;width:100%;height:100%;min-height:0;max-height:100%;object-fit:contain;grid-column:2;grid-row:1}
+.hero-welcome .welcome-inner{grid-column:1;grid-row:1;width:auto;margin:0;padding:24px 30px}
+.hero-welcome .slide-copy h1{font-size:clamp(27px,3.1vw,45px);line-height:1.18;margin-bottom:16px}
+.hero-welcome .slide-description{font-size:clamp(14px,1.2vw,18px)}
+.hero-welcome .slide-eyebrow{font-size:10px}
+.hero-welcome .slide-actions{gap:8px}
+.hero-welcome .slide-button{padding:0 14px;gap:12px}
+@media(max-width:640px){
+.hero-welcome{grid-template-columns:1fr;grid-template-rows:minmax(0,auto) minmax(0,1fr);align-content:center}
+.welcome-community-photo{grid-column:1;grid-row:1;height:auto;max-height:29svh;object-fit:contain}
+.hero-welcome .welcome-inner{grid-column:1;grid-row:2;padding:14px 20px;align-self:center}
+.hero-welcome .slide-copy h1{font-size:clamp(23px,6.1vw,32px);margin-bottom:10px}
+.hero-welcome .slide-description{font-size:13px;line-height:1.45}
+.hero-welcome .slide-eyebrow{font-size:9px;margin-bottom:8px}
+.hero-welcome .slide-actions{margin-top:12px}
+.hero-welcome .slide-address{font-size:10px;margin-top:10px}
+}
+@media(max-height:600px){
+.hero-welcome .welcome-inner{padding:10px 20px}
+.hero-welcome .slide-copy h1{font-size:clamp(21px,3vw,32px);margin-bottom:8px}
+.hero-welcome .slide-description{font-size:12px}
+.hero-welcome .slide-actions{margin-top:8px}
+.hero-welcome .slide-button{min-height:38px;font-size:11px}
+.hero-welcome .slide-address{margin-top:8px}
+}
