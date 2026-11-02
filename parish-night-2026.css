@@ -24,3 +24,10 @@
 .pn-coordinator-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 40px;list-style:disc;padding-left:1.4rem;margin:0}
 .pn-coordinator-list li{font-size:clamp(1.15rem,2vw,1.35rem);font-weight:700;line-height:1.6;color:var(--pn-red);padding-left:4px}
 @media(max-width:640px){.pn-page #coordinators{padding:25px 20px}.pn-coordinator-list{grid-template-columns:1fr;gap:10px}.pn-coordinator-intro{font-size:1rem}}
+
+/* Give the full sponsorship benefits room to read. */
+.pn-page .pn-tier-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.pn-page .pn-tier{padding:28px 24px}
+.pn-tier-benefits{text-align:left;padding-left:1.2rem;margin:20px 0 0;display:grid;gap:12px;font-size:.9rem;line-height:1.75;color:var(--pn-ink)}
+.pn-tier-benefits li::marker{color:var(--pn-gold)}
+@media(max-width:640px){.pn-page .pn-tier-grid{grid-template-columns:1fr;gap:16px}.pn-page .pn-tier{padding:25px 22px}.pn-tier-benefits{font-size:.88rem}.pn-page .pn-tier h3{font-size:1.05rem}}
