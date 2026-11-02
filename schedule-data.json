@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-26T12:48:17+00:00",
+  "updated_at": "2026-10-30T19:56:49+00:00",
   "records": [
     {
       "Date": "2026-10-06",
@@ -161,6 +161,51 @@
       "Event": "Holy Qurbana",
       "Details": "Holyween, Catechism, Trunk or Treat",
       "Responsibility": "Ward 8 (St.Thomas Unit)",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-03",
+      "Time": "18:30",
+      "Event": "Confession",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-03",
+      "Time": "19:00",
+      "Event": "Holy Qurbana",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-05",
+      "Time": "18:30",
+      "Event": "Confession",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-05",
+      "Time": "19:00",
+      "Event": "Holy Qurbana",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-08",
+      "Time": "12:30",
+      "Event": "Holy Qurbana",
+      "Details": "Catechism after Holy Qurbana",
+      "Responsibility": "Nurses Ministry",
       "Category": "Weekly",
       "Link": ""
     }
