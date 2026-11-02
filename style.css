@@ -591,3 +591,18 @@ footer { background: #071f37; color: #dfe9f1; }
     font-size: clamp(1.85rem, 3.5vw, 2.75rem);
     color: var(--marian-900);
 }
+/* Event memories: plain links keep social-media scripts off the homepage. */
+.parish-highlights{background:#faf6ee}
+.parish-highlights-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.parish-highlight{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.parish-highlight-image{display:block;aspect-ratio:16/9;background:#eee7d9}
+.parish-highlight-image img{display:block;width:100%;height:100%;object-fit:cover}
+.parish-highlight-poster img{object-fit:contain}
+.parish-highlight-copy{padding:26px}
+.parish-highlight-copy h3{font-size:1.45rem;margin:0 0 12px}
+.parish-highlight-copy>p:not(.eyebrow){line-height:1.7}
+.event-highlight-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.event-highlight-actions a{display:inline-flex;align-items:center;gap:8px;padding:11px 14px;min-height:44px;border:1px solid #d4dfeb;border-radius:6px;color:#123d65;background:#f4f8fc;font-size:.85rem;font-weight:700;text-decoration:none}
+.event-highlight-actions a:hover{background:#e5eff8}
+.event-highlight-actions a:focus-visible{outline:3px solid #bd9143;outline-offset:3px}
+@media(max-width:760px){.parish-highlights-grid{grid-template-columns:1fr;gap:20px}.parish-highlight-copy{padding:22px}.parish-highlight-copy h3{font-size:1.3rem}}
