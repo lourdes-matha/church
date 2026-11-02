@@ -606,3 +606,10 @@ footer { background: #071f37; color: #dfe9f1; }
 .event-highlight-actions a:hover{background:#e5eff8}
 .event-highlight-actions a:focus-visible{outline:3px solid #bd9143;outline-offset:3px}
 @media(max-width:760px){.parish-highlights-grid{grid-template-columns:1fr;gap:20px}.parish-highlight-copy{padding:22px}.parish-highlight-copy h3{font-size:1.3rem}}
+
+/* Lightweight still preview; the video plays on the social platform. */
+.parish-highlight-video,.archive-video-cover{position:relative;display:block;background:#14212a;overflow:hidden}
+.parish-highlight-video img{object-fit:contain}
+.highlight-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:62px;height:62px;padding-left:4px;border:2px solid #fff;border-radius:50%;background:#0b2539c9;color:#fff;font-size:23px;box-shadow:0 2px 14px #0005;pointer-events:none}
+.highlight-video-label{position:absolute;left:12px;bottom:12px;background:#0b2539e8;color:#fff;padding:6px 12px;border-radius:4px;font-size:.8rem;font-weight:700;pointer-events:none}
+.archive-video-cover .event-poster{object-fit:contain}
