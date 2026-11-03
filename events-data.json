@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T03:34:29.846446+00:00",
+  "updated_at": "2026-11-03T16:28:09.340843+00:00",
   "events": [
     {
       "ID": "holyween-2026",
@@ -55,8 +55,8 @@
     {
       "ID": "parish-night-2026",
       "Event Name": "Parish Night 2026",
-      "Start Date": "2026-11-28",
-      "End Date": "2026-11-28",
+      "Start Date": "2026-11-01",
+      "End Date": "2026-11-01",
       "Poster URL": "images/events/parish-night-mobile.webp",
       "Desktop Banner URL": "images/events/parish-night-desktop.webp",
       "Mobile Banner URL": "images/events/parish-night-mobile.webp",
