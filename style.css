@@ -613,3 +613,8 @@ footer { background: #071f37; color: #dfe9f1; }
 .highlight-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:62px;height:62px;padding-left:4px;border:2px solid #fff;border-radius:50%;background:#0b2539c9;color:#fff;font-size:23px;box-shadow:0 2px 14px #0005;pointer-events:none}
 .highlight-video-label{position:absolute;left:12px;bottom:12px;background:#0b2539e8;color:#fff;padding:6px 12px;border-radius:4px;font-size:.8rem;font-weight:700;pointer-events:none}
 .archive-video-cover .event-poster{object-fit:contain}
+
+/* Published events keep photo previews intact. */
+.poster-managed{background:#fffaf0}
+.managed-event-photo{display:block;background:#f3eee5}
+.managed-event-photo .event-poster{object-fit:contain}

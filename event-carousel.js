@@ -1,8 +1,8 @@
 (() => {
   const carousel = document.querySelector('.event-carousel');
   if (!carousel) return;
-  const slides = [...carousel.querySelectorAll('.event-slide')];
-  const dots = [...carousel.querySelectorAll('[data-event-go]')];
+  let slides = [...carousel.querySelectorAll('.event-slide')];
+  let dots = [...carousel.querySelectorAll('[data-event-go]')];
   const pause = carousel.querySelector('[data-event-pause]');
   const live = carousel.querySelector('.event-slides');
   let current = 0, paused = false, timer, startX = null;
@@ -38,7 +38,15 @@
   }
   carousel.querySelector('[data-event-prev]').addEventListener('click', () => show(current - 1));
   carousel.querySelector('[data-event-next]').addEventListener('click', () => show(current + 1));
-  dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
+  carousel.querySelector('.hero-progress').addEventListener('click', event => {
+    const button = event.target.closest('[data-event-go]');
+    if (button) show(Number(button.dataset.eventGo));
+  });
+  carousel.addEventListener('slidesupdated', () => {
+    slides = [...carousel.querySelectorAll('.event-slide')];
+    dots = [...carousel.querySelectorAll('[data-event-go]')];
+    show(0);
+  });
   pause.addEventListener('click', () => setPaused(!paused));
   carousel.addEventListener('keydown', event => {
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {

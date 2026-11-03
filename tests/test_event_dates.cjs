@@ -1,0 +1,14 @@
+const assert = require('node:assert/strict');
+const {windsorDay,select}=require('../events-managed.js');
+const events=require('../events-data.json').events;
+assert.equal(windsorDay(new Date('2026-11-02T04:59:00Z')),'2026-11-01');
+assert.equal(windsorDay(new Date('2026-11-02T05:00:00Z')),'2026-11-02');
+assert(select(events,'2026-11-01').upcoming.some(e=>e.ID==='holyween-2026'));
+assert(select(events,'2026-11-02').earlier.some(e=>e.ID==='holyween-2026'));
+assert(!select(events,'2026-11-02').slides.some(e=>e.ID==='holyween-2026'));
+assert(select(events,'2026-11-28').slides.some(e=>e.ID==='parish-night-2026'));
+assert(!select(events,'2026-11-29').slides.some(e=>e.ID==='parish-night-2026'));
+assert(select(events,'2026-12-10').upcoming.some(e=>e.ID==='christmas-carol-2026'));
+assert(!select(events,'2026-12-20').upcoming.some(e=>e.ID==='christmas-carol-2026'));
+assert.equal(select(events.map(e=>({...e,Enabled:false})),'2026-11-02').slides.length,0);
+console.log('Windsor rollover, slide expiry, multi-day events and disabled-event checks passed.');
