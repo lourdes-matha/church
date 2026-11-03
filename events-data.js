@@ -1,6 +1,6 @@
 window.PARISH_EVENTS = {
   "schema_version": 1,
-  "updated_at": "2026-11-02T22:00:00+00:00",
+  "updated_at": "2026-11-03T03:34:29.846446+00:00",
   "events": [
     {
       "ID": "holyween-2026",
@@ -60,10 +60,10 @@ window.PARISH_EVENTS = {
       "Poster URL": "images/events/parish-night-mobile.webp",
       "Desktop Banner URL": "images/events/parish-night-desktop.webp",
       "Mobile Banner URL": "images/events/parish-night-mobile.webp",
-      "Event Link": "parish-night-2026.html",
+      "Event Link": "https://lourdesmathawindsor.ca/parish-night-2026.html",
       "Show in Slideshow": true,
       "Slide Start Date": "2026-10-20",
-      "Slide End Date": "2026-11-28",
+      "Slide End Date": "2026-11-01",
       "Slide Order": 3,
       "Enabled": true,
       "Instagram URL": "",
