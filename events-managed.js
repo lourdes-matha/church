@@ -8,9 +8,10 @@
   }
   function select(events, today) {
     const enabled = events.filter(e => e.Enabled === true);
+    const listed = enabled.filter(e => e['Show in Events'] !== false);
     return {
-      upcoming: enabled.filter(e => e['End Date'] >= today).sort((a, b) => a['Start Date'].localeCompare(b['Start Date'])),
-      earlier: enabled.filter(e => e['End Date'] < today).sort((a, b) => b['End Date'].localeCompare(a['End Date'])),
+      upcoming: listed.filter(e => e['End Date'] >= today).sort((a, b) => a['Start Date'].localeCompare(b['Start Date'])),
+      earlier: listed.filter(e => e['End Date'] < today).sort((a, b) => b['End Date'].localeCompare(a['End Date'])),
       slides: enabled.filter(e => e['Show in Slideshow'] === true && e['Slide Start Date'] <= today && e['Slide End Date'] >= today)
         .sort((a, b) => a['Slide Order'] - b['Slide Order'] || a.ID.localeCompare(b.ID))
     };

@@ -14,6 +14,8 @@ Poster upload folder: https://drive.google.com/drive/folders/1koCVPPJq_lBTMKCS0y
 
 Upload the event poster to that folder; copy the individual file's sharing link, not the folder link, into Poster URL. For a homepage slide also supply desktop and mobile file links, Show in Slideshow=Yes, slide start/end dates and an order number. Use Yes/No for Enabled. Optional Event Link may point to a parish event page or social post.
 
+For a homepage announcement, add **Show in Events** as an optional column. Set it to **No**, set **Show in Slideshow** and **Enabled** to **Yes**, and supply both banner links and both slide dates. Leave Poster URL and the event Start Date and End Date blank. Existing rows with a blank or missing Show in Events value are listed as usual.
+
 Images must be publicly readable via their links. Do not upload videos into this system: use a small video cover as the poster and a social-media link. Existing website image links are also supported.
 
 Optional extra sheet columns: Instagram URL, Facebook URL, Description, Date Label, Media Type (photo/video). Existing social links/descriptions are retained by ID if those columns are absent. Adding those columns lets you change or clear their values yourself. Use Date Label for events on several nonconsecutive dates, such as carol visits.

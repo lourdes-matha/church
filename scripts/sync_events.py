@@ -54,17 +54,20 @@ def parse_events(text):
         if not row['Event Name']:
             raise ValueError('Event Name is required')
         enabled, slideshow = yes(row['Enabled']), yes(row['Show in Slideshow'])
-        start = day(row['Start Date'])
-        row['End Date'] = row['End Date'] or row['Start Date']
-        if day(row['End Date']) < start:
-            raise ValueError('End Date cannot precede Start Date')
+        show_in_events = yes(row.get('Show in Events') or 'Yes')
+        row['Show in Events'] = show_in_events
+        if show_in_events or row['Start Date'] or row['End Date']:
+            start = day(row['Start Date'])
+            row['End Date'] = row['End Date'] or row['Start Date']
+            if day(row['End Date']) < start:
+                raise ValueError('End Date cannot precede Start Date')
         for field in IMAGES + ['Event Link', 'Instagram URL', 'Facebook URL']:
             safe_link(row.get(field, ''))
-        if enabled and not row['Poster URL']:
+        if enabled and show_in_events and not row['Poster URL']:
             raise ValueError('Enabled events need a Poster URL')
         if slideshow:
-            if not all(row[k] for k in IMAGES):
-                raise ValueError('Slideshow events need poster, desktop and mobile images')
+            if not all(row[k] for k in ('Desktop Banner URL', 'Mobile Banner URL')):
+                raise ValueError('Slideshow entries need desktop and mobile images')
             if not row['Slide Start Date'] or not row['Slide End Date']:
                 raise ValueError('Slideshow events need both slide dates')
             if day(row['Slide End Date']) < day(row['Slide Start Date']):
