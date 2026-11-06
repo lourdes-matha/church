@@ -4,5 +4,11 @@
     "tier": "silver",
     "desktop": "images/sponsors/sheet-633cd8a5d8da05e7bcc4.webp",
     "mobile": "images/sponsors/sheet-deb062acd5c5715eadae.webp"
+  },
+  {
+    "name": "Fijin Family",
+    "tier": "family",
+    "desktop": "images/sponsors/sheet-8b2288f8529abc19526c.webp",
+    "mobile": "images/sponsors/sheet-8b2288f8529abc19526c.webp"
   }
 ]
