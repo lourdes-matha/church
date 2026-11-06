@@ -31,3 +31,61 @@
 .pn-tier-benefits{text-align:left;padding-left:1.2rem;margin:20px 0 0;display:grid;gap:12px;font-size:.9rem;line-height:1.75;color:var(--pn-ink)}
 .pn-tier-benefits li::marker{color:var(--pn-gold)}
 @media(max-width:640px){.pn-page .pn-tier-grid{grid-template-columns:1fr;gap:16px}.pn-page .pn-tier{padding:25px 22px}.pn-tier-benefits{font-size:.88rem}.pn-page .pn-tier h3{font-size:1.05rem}}
+
+/* Parish Night sponsor recognition */
+#pn-sponsor-gallery { margin: 0 auto 46px; }
+.pn-preview-note {
+  padding: 12px 18px;
+  background: #fff5de;
+  border: 1px solid #ead6ac;
+  border-radius: 8px;
+  color: #593e16;
+  text-align: center;
+  font-size: .88rem;
+}
+.pn-recognition { --sponsor-accent: #536775; margin: 30px auto; }
+.pn-recognition-gold { --sponsor-accent: #916516; }
+.pn-recognition-silver { --sponsor-accent: #596271; }
+.pn-recognition-family { --sponsor-accent: #8a3e50; }
+.pn-recognition h3 {
+  color: var(--sponsor-accent);
+  border-bottom: 1px solid #e8ddcc;
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+.pn-recognition-grid { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+.pn-recognition-card {
+  width: 100%;
+  max-width: 900px;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e8ddcc;
+  border-top: 3px solid var(--sponsor-accent);
+  border-radius: 10px;
+  background: #fff;
+}
+.pn-recognition-gold .pn-recognition-card { width: calc((100% - 16px) / 2); max-width: 560px; }
+.pn-recognition-silver .pn-recognition-card { width: calc((100% - 32px) / 3); max-width: 420px; }
+.pn-recognition-family .pn-recognition-card { width: calc((100% - 48px) / 4); }
+.pn-recognition-card h4 { margin: 0; padding: 12px 10px; text-align: center; overflow-wrap: anywhere; }
+.pn-sponsor-poster, .pn-sponsor-poster picture, .pn-sponsor-poster img { display: block; width: 100%; }
+.pn-sponsor-poster img { height: auto; }
+.pn-sponsor-poster:focus-visible { outline-offset: -4px; }
+.pn-recognition-family img { aspect-ratio: 4 / 3; object-fit: contain; background: #f8f2ec; }
+.pn-sample-art {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 8px;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #faf6ef, #f0e7db);
+  color: var(--sponsor-accent);
+  text-align: center;
+}
+.pn-sample-art span { font-size: clamp(1.8rem, 5vw, 3.5rem); line-height: 1; }
+.pn-recognition-family .pn-sample-art { aspect-ratio: 4 / 3; }
+@media (max-width: 640px) {
+  .pn-recognition-gold .pn-recognition-card { width: 100%; }
+  .pn-recognition-silver .pn-recognition-card { width: 100%; max-width: 300px; }
+  .pn-recognition-family .pn-recognition-card { width: calc((100% - 16px) / 2); }
+}
