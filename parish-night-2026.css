@@ -65,8 +65,8 @@
   background: #fff;
 }
 .pn-recognition-gold .pn-recognition-card { width: calc((100% - 16px) / 2); max-width: 560px; }
-.pn-recognition-silver .pn-recognition-card { width: calc((100% - 32px) / 3); max-width: 420px; }
-.pn-recognition-family .pn-recognition-card { width: calc((100% - 16px) / 2); max-width: 540px; }
+.pn-recognition-family .pn-recognition-card { width: calc((100% - 32px) / 3); max-width: 420px; }
+.pn-recognition-silver .pn-recognition-card { width: calc((100% - 16px) / 2); max-width: 540px; }
 .pn-recognition-card h4 { margin: 0; padding: 12px 10px; text-align: center; overflow-wrap: anywhere; }
 .pn-sponsor-poster, .pn-sponsor-poster picture, .pn-sponsor-poster img { display: block; width: 100%; }
 .pn-sponsor-poster img { height: auto; }
@@ -86,6 +86,6 @@
 .pn-recognition-family .pn-sample-art { aspect-ratio: 4 / 3; }
 @media (max-width: 640px) {
   .pn-recognition-gold .pn-recognition-card { width: 100%; }
-  .pn-recognition-silver .pn-recognition-card { width: 100%; max-width: 300px; }
-  .pn-recognition-family .pn-recognition-card { width: 100%; }
+  .pn-recognition-family .pn-recognition-card { width: 100%; max-width: 300px; }
+  .pn-recognition-silver .pn-recognition-card { width: 100%; }
 }
