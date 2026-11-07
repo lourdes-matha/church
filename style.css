@@ -640,3 +640,13 @@ footer { background: #071f37; color: #dfe9f1; }
     from { box-shadow: 0 0 0 0 rgb(244 196 98 / .6); }
     to { box-shadow: 0 0 0 .4rem rgb(244 196 98 / 0); }
 }
+
+@media (max-width: 640px) {
+    .announcement-inner-parish-night {
+        flex-direction: column;
+        text-align: center;
+        padding: .4rem 0;
+        gap: .3rem;
+    }
+    .announcement-parish-night-date { display: none; }
+}
