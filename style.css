@@ -613,3 +613,30 @@ footer { background: #071f37; color: #dfe9f1; }
 .highlight-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:62px;height:62px;padding-left:4px;border:2px solid #fff;border-radius:50%;background:#0b2539c9;color:#fff;font-size:23px;box-shadow:0 2px 14px #0005;pointer-events:none}
 .highlight-video-label{position:absolute;left:12px;bottom:12px;background:#0b2539e8;color:#fff;padding:6px 12px;border-radius:4px;font-size:.8rem;font-weight:700;pointer-events:none}
 .archive-video-cover .event-poster{object-fit:contain}
+
+
+/* Keep the homepage event link readable while drawing attention to it. */
+.announcement-parish-night .announcement-label {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .35rem .8rem;
+    font-size: .8rem;
+    line-height: 1.4;
+}
+.announcement-inner a.announcement-parish-night { text-decoration: none; }
+.announcement-parish-night:hover .announcement-label { background: #f5ce76; }
+.announcement-parish-night:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+    border-radius: 999px;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .announcement-parish-night .announcement-label {
+        animation: parish-night-pulse 1.5s ease-out 3;
+    }
+}
+@keyframes parish-night-pulse {
+    from { box-shadow: 0 0 0 0 rgb(244 196 98 / .6); }
+    to { box-shadow: 0 0 0 .4rem rgb(244 196 98 / 0); }
+}
