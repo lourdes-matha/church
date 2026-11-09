@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-30T19:56:49+00:00",
+  "updated_at": "2026-11-09T08:06:23+00:00",
   "records": [
     {
       "Date": "2026-10-06",
@@ -206,6 +206,33 @@
       "Event": "Holy Qurbana",
       "Details": "Catechism after Holy Qurbana",
       "Responsibility": "Nurses Ministry",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-10",
+      "Time": "",
+      "Event": "No Holy Qurbana this week",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-12",
+      "Time": "",
+      "Event": "No Holy Qurbana this week",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-15",
+      "Time": "15:00",
+      "Event": "Holy Qurbana",
+      "Details": "Catechism after Holy Qurbana",
+      "Responsibility": "Ward 1 (Holy Family Unit)",
       "Category": "Weekly",
       "Link": ""
     }
