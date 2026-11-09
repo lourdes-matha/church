@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-09T08:06:23+00:00",
+  "updated_at": "2026-11-09T12:05:08+00:00",
   "records": [
     {
       "Date": "2026-10-06",
@@ -212,7 +212,7 @@
     {
       "Date": "2026-11-10",
       "Time": "",
-      "Event": "No Holy Qurbana this week",
+      "Event": "No Holy Qurbana",
       "Details": "",
       "Responsibility": "",
       "Category": "Weekly",
@@ -221,7 +221,7 @@
     {
       "Date": "2026-11-12",
       "Time": "",
-      "Event": "No Holy Qurbana this week",
+      "Event": "No Holy Qurbana",
       "Details": "",
       "Responsibility": "",
       "Category": "Weekly",
