@@ -33,10 +33,19 @@
       image.loading = 'lazy';
       image.decoding = 'async';
       picture.append(image);
-      const poster = element('a', 'pn-sponsor-poster');
-      poster.href = sponsor.desktop || sponsor.mobile;
-      poster.setAttribute('aria-label', 'Open full poster for ' + sponsor.name);
-      poster.addEventListener('click', () => { poster.href = image.currentSrc || image.src; });
+      const familyPhoto = sponsor.tier === 'family';
+      const poster = element(familyPhoto ? 'div' : 'a', 'pn-sponsor-poster');
+      if (familyPhoto) {
+        // Deter casual saving; displayed images remain accessible to the browser.
+        poster.classList.add('pn-family-photo');
+        image.draggable = false;
+        poster.addEventListener('contextmenu', event => event.preventDefault());
+        poster.addEventListener('dragstart', event => event.preventDefault());
+      } else {
+        poster.href = sponsor.desktop || sponsor.mobile;
+        poster.setAttribute('aria-label', 'Open full poster for ' + sponsor.name);
+        poster.addEventListener('click', () => { poster.href = image.currentSrc || image.src; });
+      }
       poster.append(picture);
       node.append(poster);
     }

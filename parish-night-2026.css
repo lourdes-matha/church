@@ -89,3 +89,16 @@
   .pn-recognition-family .pn-recognition-card { width: 100%; max-width: 300px; }
   .pn-recognition-silver .pn-recognition-card { width: 100%; }
 }
+
+/* Suppress image callouts without blocking page scrolling or pinch zoom. */
+.pn-family-photo,
+.pn-family-photo picture,
+.pn-family-photo img {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.pn-registration .pn-register-link{display:block;text-decoration:none;background:#f5e5c7;color:#59212c}
+.pn-registration .pn-register-link:hover{background:#fff0d4}
+@media(max-width:640px){.pn-hero img{aspect-ratio:2/3}}
