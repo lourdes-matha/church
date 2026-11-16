@@ -16,6 +16,29 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XS9W7XEYRH"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XS9W7XEYRH');</script>
   <script src="parish-night-sponsors.js" defer></script>
+  <style>
+    /* Discourage casual copying while preserving scrolling, zoom and form entry. */
+    html, body, body * {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    input, textarea, [contenteditable="true"] {
+      -webkit-user-select: text;
+      user-select: text;
+    }
+  </style>
+  <script>
+    // Page-wide deterrent, including content loaded later by main.js.
+    document.addEventListener('contextmenu', function (event) {
+      event.preventDefault();
+    }, true);
+    document.addEventListener('dragstart', function (event) {
+      if (event.target.closest && event.target.closest('img, picture, a')) {
+        event.preventDefault();
+      }
+    }, true);
+  </script>
 </head>
 <body class="pn-page">
 <a class="skip-link" href="#main-content">Skip to main content</a>
