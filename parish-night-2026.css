@@ -89,3 +89,12 @@
   .pn-recognition-family .pn-recognition-card { width: 100%; max-width: 300px; }
   .pn-recognition-silver .pn-recognition-card { width: 100%; }
 }
+
+/* Suppress image callouts without blocking page scrolling or pinch zoom. */
+.pn-family-photo,
+.pn-family-photo picture,
+.pn-family-photo img {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
