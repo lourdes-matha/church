@@ -20,6 +20,7 @@
   }
   function show(index) {
     current = (index + slides.length) % slides.length;
+    carousel.querySelector('.parish-know-more').hidden = !slides[current].classList.contains('poster-parish-night');
     slides.forEach((slide, i) => { slide.hidden = i !== current; });
     dots.forEach((dot, i) => {
       if (i === current) dot.setAttribute('aria-current', 'true');
