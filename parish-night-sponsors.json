@@ -30,15 +30,15 @@
     "mobile": "images/sponsors/sheet-3fd47fe86530e0aeedbd.webp"
   },
   {
-    "name": "Fijin Family",
-    "tier": "family",
-    "desktop": "images/sponsors/sheet-542d7fbafb692a51a3fc.webp",
-    "mobile": "images/sponsors/sheet-542d7fbafb692a51a3fc.webp"
-  },
-  {
     "name": "Jojo Family",
     "tier": "family",
     "desktop": "images/sponsors/sheet-e16020c14db430c02ece.webp",
     "mobile": "images/sponsors/sheet-e16020c14db430c02ece.webp"
+  },
+  {
+    "name": "Fijin Family",
+    "tier": "family",
+    "desktop": "images/sponsors/sheet-542d7fbafb692a51a3fc.webp",
+    "mobile": "images/sponsors/sheet-542d7fbafb692a51a3fc.webp"
   }
 ]
