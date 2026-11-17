@@ -1,0 +1,37 @@
+name: Sync Parish Night sponsors
+on:
+  schedule:
+    - cron: '41 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: sponsor-sync-${{ github.ref_name }}
+  cancel-in-progress: false
+jobs:
+  sync:
+    if: github.ref_name == 'main' || github.ref_name == 'parish-night-sponsors'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install image processor
+        run: python3 -m pip install 'Pillow>=11,<13'
+      - name: Read sponsor sheet and download approved images
+        run: python3 scripts/sync_sponsors.py
+      - name: Commit gallery changes
+        id: commit
+        run: |
+          git add -- parish-night-sponsors.json images/sponsors
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Sync Parish Night sponsors'
+          git push origin "HEAD:$GITHUB_REF_NAME"
+          echo 'changed=true' >> "$GITHUB_OUTPUT"
+      - name: Request production Pages rebuild
+        if: steps.commit.outputs.changed == 'true' && github.ref_name == 'main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"

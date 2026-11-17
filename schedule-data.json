@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-30T19:56:49+00:00",
+  "updated_at": "2026-11-16T08:03:11+00:00",
   "records": [
     {
       "Date": "2026-10-06",
@@ -206,6 +206,78 @@
       "Event": "Holy Qurbana",
       "Details": "Catechism after Holy Qurbana",
       "Responsibility": "Nurses Ministry",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-10",
+      "Time": "",
+      "Event": "No Holy Qurbana",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-12",
+      "Time": "",
+      "Event": "No Holy Qurbana",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-15",
+      "Time": "15:00",
+      "Event": "Holy Qurbana",
+      "Details": "Catechism after Holy Qurbana",
+      "Responsibility": "Ward 1 (Holy Family Unit)",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-17",
+      "Time": "18:30",
+      "Event": "Confession",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-17",
+      "Time": "19:00",
+      "Event": "Holy Qurbana",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-19",
+      "Time": "18:30",
+      "Event": "Confession",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-19",
+      "Time": "19:00",
+      "Event": "Holy Qurbana",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-22",
+      "Time": "12:30",
+      "Event": "Holy Qurbana",
+      "Details": "Catechism after Holy Qurbana",
+      "Responsibility": "Ward 2 (Little Flower Unit)",
       "Category": "Weekly",
       "Link": ""
     }
