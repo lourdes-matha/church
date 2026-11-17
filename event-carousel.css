@@ -48,12 +48,8 @@
 /* Only the Parish Night slide has this event-page action. */
 .parish-know-more{position:absolute;right:20px;bottom:14px;z-index:2;display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:44px;padding:0 20px;border:1px solid #e5bc70;border-radius:3px;background:#e5bc70;color:#132c3b;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 2px 12px #0005}.parish-know-more:hover{background:#f1cf91}@media(max-width:640px){.parish-know-more{right:12px;bottom:10px;padding-inline:16px;font-size:12px}}
 
-
-/* Let the Parish Night poster determine its height so it fills the width intact. */
-.home-page .hero-carousel.is-parish-poster{height:auto;max-height:none}
-.hero-carousel.is-parish-poster .event-slides{flex:0 0 auto;height:auto;container-type:normal}
-.hero-carousel.is-parish-poster .poster-parish-night{position:relative;inset:auto;height:auto;overflow:visible}
-.hero-carousel.is-parish-poster .poster-parish-night .poster-link,
-.hero-carousel.is-parish-poster .poster-parish-night picture{height:auto}
-.hero-carousel.is-parish-poster .poster-parish-night img{width:100%;height:auto;object-fit:contain}
-.hero-carousel.is-parish-poster .parish-know-more{position:relative;right:auto;bottom:auto;display:flex;width:fit-content;margin:10px auto;box-shadow:none}
+/* Match the other slides' fixed height, reserving space for the action below the image. */
+.hero-carousel .poster-parish-night{display:flex;flex-direction:column;align-items:center}
+.hero-carousel .poster-parish-night .poster-link{flex:1 1 0;min-height:0;width:100%;height:auto}
+.hero-carousel .poster-parish-night .parish-know-more{position:static;flex:0 0 auto;min-height:36px;margin:6px auto;padding:0 18px;box-shadow:none}
+@media(max-width:640px){.hero-carousel .poster-parish-night .parish-know-more{min-height:32px;margin:4px auto;font-size:12px}}
