@@ -105,7 +105,20 @@
   function update(force = false) {
     const data = root.PARISH_EVENTS, today = windsorDay();
     if (!data || data.schema_version !== 1 || !Array.isArray(data.events) || (!force && today === renderedDay)) return;
-    const groups = select(data.events,today);
+    // Keep homepage-only posters alongside the sheet-driven slides after each refresh.
+    const homepagePosters = [
+      {ID: 'christmas-carol-2026', 'Event Name': 'Christmas Carol',
+       'Desktop Banner URL': 'images/events/christmas-carol-desktop.webp',
+       'Mobile Banner URL': 'images/events/christmas-carol-mobile.webp',
+       'Slide Order': 999},
+      {ID: 'carol-competition-2026', 'Event Name': 'Carol Competition',
+       'Desktop Banner URL': 'images/events/carol-competition-2026-desktop.webp',
+       'Mobile Banner URL': 'images/events/carol-competition-2026-mobile.webp',
+       'Slide Order': 1000}
+    ].map(e => ({...e, Enabled: true, 'Show in Events': false,
+      'Show in Slideshow': true, 'Slide Start Date': '2026-11-16', 'Slide End Date': '2026-12-25'}));
+    const homepageIDs = new Set(homepagePosters.map(e => e.ID));
+    const groups = select([...data.events.filter(e => !homepageIDs.has(e.ID)), ...homepagePosters],today);
     renderEvents(groups); renderSlides(groups.slides); renderedDay = today;
   }
   update(true);
