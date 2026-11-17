@@ -101,4 +101,4 @@
 
 .pn-registration .pn-register-link{display:block;text-decoration:none;background:#f5e5c7;color:#59212c}
 .pn-registration .pn-register-link:hover{background:#fff0d4}
-@media(max-width:640px){.pn-hero img{aspect-ratio:2/3}}
+@media(max-width:640px){.pn-hero img{aspect-ratio:4/5}}
