@@ -30,15 +30,21 @@
     "mobile": "images/sponsors/sheet-3fd47fe86530e0aeedbd.webp"
   },
   {
-    "name": "Jojo Family",
+    "name": "Jojo and Rincy Family",
     "tier": "family",
-    "desktop": "images/sponsors/sheet-e16020c14db430c02ece.webp",
-    "mobile": "images/sponsors/sheet-e16020c14db430c02ece.webp"
+    "desktop": "images/sponsors/sheet-22f4a82a05ee5d1efb4d.webp",
+    "mobile": "images/sponsors/sheet-22f4a82a05ee5d1efb4d.webp"
   },
   {
-    "name": "Fijin Family",
+    "name": "Fijin and Sherin Family",
     "tier": "family",
-    "desktop": "images/sponsors/sheet-542d7fbafb692a51a3fc.webp",
-    "mobile": "images/sponsors/sheet-542d7fbafb692a51a3fc.webp"
+    "desktop": "images/sponsors/sheet-2ad5799b8d9f8f8c384e.webp",
+    "mobile": "images/sponsors/sheet-2ad5799b8d9f8f8c384e.webp"
+  },
+  {
+    "name": "Printo and Shalu Family",
+    "tier": "family",
+    "desktop": "images/sponsors/sheet-0d51d6cc5f5d0eea8e0e.webp",
+    "mobile": "images/sponsors/sheet-0d51d6cc5f5d0eea8e0e.webp"
   }
 ]
