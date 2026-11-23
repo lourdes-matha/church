@@ -326,9 +326,26 @@ const weeklyOnly = events.filter(event =>
 
             dayEvents.forEach(event => {
                 const item = element("div", "weekly-event", "");
+                const title = element("h3", "", event.Event);
+                if (event.Link) {
+                    try {
+                        const url = new URL(event.Link, window.location.href);
+                        if (["https:", "http:"].includes(url.protocol)) {
+                            const link = element("a", "upcoming-event-link", `${event.Event} ↗`);
+                            link.href = url.href;
+                            if (url.origin !== window.location.origin) {
+                                link.target = "_blank";
+                                link.rel = "noopener noreferrer";
+                            }
+                            title.replaceChildren(link);
+                        }
+                    } catch {
+                        // Invalid links leave the event title as plain text.
+                    }
+                }
                 item.append(
                     element("div", "weekly-time", formatTime(event.Time)),
-                    element("h3", "", event.Event)
+                    title
                 );
 
                 if (event.Details) {
