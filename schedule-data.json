@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-16T08:03:11+00:00",
+  "updated_at": "2026-11-23T13:05:10+00:00",
   "records": [
     {
       "Date": "2026-10-06",
@@ -278,6 +278,69 @@
       "Event": "Holy Qurbana",
       "Details": "Catechism after Holy Qurbana",
       "Responsibility": "Ward 2 (Little Flower Unit)",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-24",
+      "Time": "18:30",
+      "Event": "Confession",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-24",
+      "Time": "19:00",
+      "Event": "Holy Qurbana",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-26",
+      "Time": "18:30",
+      "Event": "Confession",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-26",
+      "Time": "19:00",
+      "Event": "Holy Qurbana",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-28",
+      "Time": "16:30",
+      "Event": "Lourdes Fest 2026 Gates open",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-28",
+      "Time": "17:00",
+      "Event": "Lourdes Fest 2026",
+      "Details": "",
+      "Responsibility": "",
+      "Category": "Weekly",
+      "Link": ""
+    },
+    {
+      "Date": "2026-11-29",
+      "Time": "12:30",
+      "Event": "Holy Qurbana",
+      "Details": "Catechism after Holy Qurbana",
+      "Responsibility": "Ward 3 (St.Marys Unit)",
       "Category": "Weekly",
       "Link": ""
     }
