@@ -54,6 +54,17 @@
     }
     node.append(element('h4', '', sponsor.name));
     if (sponsor.tier === 'gold' && (sponsor.website || sponsor.phone)) {
+      const contacts = element('div', 'pn-gold-actions');
+      if (sponsor.website) {
+        contacts.append(element('span', 'pn-gold-contact', sponsor.website.replace(/^https?:\/\//i, '').replace(/\/$/, '')));
+      }
+      if (sponsor.phone) {
+        contacts.append(element('span', 'pn-gold-contact', sponsor.phone));
+      }
+      node.append(contacts);
+    }
+    // Direct website and telephone actions are a Platinum benefit.
+    if (sponsor.tier === 'platinum' && (sponsor.website || sponsor.phone)) {
       const actions = element('div', 'pn-gold-actions');
       if (sponsor.website) {
         try {

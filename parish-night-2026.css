@@ -114,3 +114,6 @@
 @media(max-width:640px){.pn-recognition-gold{margin-inline:-8px}.pn-recognition-gold .pn-recognition-card{width:100%;max-width:none}.pn-recognition-gold .pn-recognition-card h4{font-size:1.05rem}.pn-gold-actions{padding-inline:12px}.pn-gold-action{flex:1 1 140px;padding-inline:10px;font-size:.82rem}}
 
 .pn-page .pn-recognition-gold>h3{font-size:clamp(1.4rem,2.5vw,1.75rem);font-weight:700;line-height:1.4}
+
+.pn-gold-contact{display:inline-block;padding:10px 16px;border:1px solid #c79b50;border-radius:6px;background:#f7e7b7;color:#674812;font-size:.95rem;font-weight:700;text-align:center;overflow-wrap:anywhere}
+@media(max-width:640px){.pn-gold-contact{flex:1 1 140px;font-size:.85rem;padding:10px}}
