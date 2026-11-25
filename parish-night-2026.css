@@ -102,3 +102,13 @@
 .pn-registration .pn-register-link{display:block;text-decoration:none;background:#f5e5c7;color:#59212c}
 .pn-registration .pn-register-link:hover{background:#fff0d4}
 @media(max-width:640px){.pn-hero img{aspect-ratio:4/5}}
+
+/* Featured Gold sponsors appear before Silver with a wider, distinct card. */
+.pn-recognition-gold .pn-recognition-card{width:100%;max-width:700px;border:2px solid #c79b50;border-top-width:5px;background:#fffcf3;box-shadow:0 8px 24px #91651618}
+.pn-gold-badge{display:table;margin:16px auto!important;padding:6px 18px;border:1px solid #c79b50;border-radius:24px;background:#f7e7b7;color:#674812;font-size:.85rem;font-weight:700;letter-spacing:.05em}
+.pn-recognition-gold .pn-recognition-card h4{font-size:1.2rem;padding:18px 16px 10px}
+.pn-gold-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:8px 18px 20px}
+.pn-gold-action{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 18px;box-sizing:border-box;border:1px solid #916516;border-radius:6px;background:#916516;color:white;text-decoration:none;font-size:.9rem;font-weight:700;text-align:center}
+.pn-gold-action-call{background:white;color:#674812}
+.pn-gold-action:hover{background:#674812;color:white}
+@media(max-width:640px){.pn-recognition-gold{margin-inline:-8px}.pn-recognition-gold .pn-recognition-card{width:100%;max-width:none}.pn-recognition-gold .pn-recognition-card h4{font-size:1.05rem}.pn-gold-actions{padding-inline:12px}.pn-gold-action{flex:1 1 140px;padding-inline:10px;font-size:.82rem}}

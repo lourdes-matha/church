@@ -1,5 +1,13 @@
 [
   {
+    "name": "Growing Smiles Children’s Dentistry",
+    "tier": "gold",
+    "desktop": "images/sponsors/growing-smiles-gold.jpg",
+    "mobile": "images/sponsors/growing-smiles-gold.jpg",
+    "website": "https://www.thegrowingsmiles.ca",
+    "phone": "519-800-4500"
+  },
+  {
     "name": "Dougall Pharmacy",
     "tier": "silver",
     "desktop": "images/sponsors/sheet-633cd8a5d8da05e7bcc4.webp",
