@@ -105,6 +105,10 @@ def main():
         if not desktop and not mobile:
             raise ValueError(f"{row['ID']}: add at least one Drive image link")
         entry = {'name': row['Sponsor Name'], 'tier': row['Tier'].lower()}
+        # Optional contact columns keep sponsor actions through future syncs.
+        for column, field in [('Website', 'website'), ('Phone', 'phone')]:
+            if row.get(column):
+                entry[field] = row[column]
         for field, link in [('desktop', desktop or mobile), ('mobile', mobile or desktop)]:
             path, content = poster(link)
             images[path] = content

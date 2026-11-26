@@ -13,6 +13,9 @@
 
   function card(sponsor) {
     const node = element('article', 'pn-recognition-card');
+    if (sponsor.tier === 'gold') {
+      node.append(element('p', 'pn-gold-badge', '◆ Gold Sponsor'));
+    }
     if (sponsor.sample) {
       const art = element('div', 'pn-sample-art');
       art.append(element('span', '', sponsor.tier === 'family' ? '♡' : '◆'),
@@ -50,6 +53,39 @@
       node.append(poster);
     }
     node.append(element('h4', '', sponsor.name));
+    if (sponsor.tier === 'gold' && (sponsor.website || sponsor.phone)) {
+      const contacts = element('div', 'pn-gold-actions');
+      if (sponsor.website) {
+        contacts.append(element('span', 'pn-gold-contact', sponsor.website.replace(/^https?:\/\//i, '').replace(/\/$/, '')));
+      }
+      if (sponsor.phone) {
+        contacts.append(element('span', 'pn-gold-contact', sponsor.phone));
+      }
+      node.append(contacts);
+    }
+    // Direct website and telephone actions are a Platinum benefit.
+    if (sponsor.tier === 'platinum' && (sponsor.website || sponsor.phone)) {
+      const actions = element('div', 'pn-gold-actions');
+      if (sponsor.website) {
+        try {
+          const url = new URL(sponsor.website);
+          if (url.protocol === 'https:') {
+            const website = element('a', 'pn-gold-action', 'Visit Website ↗');
+            website.href = url.href;
+            website.target = '_blank';
+            website.rel = 'noopener noreferrer';
+            actions.append(website);
+          }
+        } catch { /* Invalid website links are omitted. */ }
+      }
+      const phone = (sponsor.phone || '').replace(/[^+0-9]/g, '');
+      if (/^\+?[0-9]{7,15}$/.test(phone)) {
+        const call = element('a', 'pn-gold-action pn-gold-action-call', 'Call ' + sponsor.phone);
+        call.href = 'tel:' + phone;
+        actions.append(call);
+      }
+      if (actions.children.length) node.append(actions);
+    }
     return node;
   }
 
