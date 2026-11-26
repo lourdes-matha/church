@@ -126,3 +126,5 @@
   .pn-recognition-gold .pn-gold-actions{flex-direction:column;align-items:center;gap:12px}
   .pn-recognition-gold .pn-gold-contact{flex:0 0 auto;box-sizing:border-box;max-width:100%;font-size:clamp(.72rem,3.4vw,.95rem);padding:10px 8px;white-space:nowrap;overflow-wrap:normal;word-break:normal}
 }
+
+.pn-page .pn-event-summary{padding:28px 0;text-align:center}.pn-event-summary h2{margin-bottom:10px}.pn-event-summary p{margin:0 0 10px;font-size:.95rem;line-height:1.7}@media(max-width:640px){.pn-page .pn-event-summary{padding:24px 0}.pn-event-summary p{font-size:.87rem}}
